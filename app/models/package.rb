@@ -3,4 +3,6 @@ class Package < ApplicationRecord
   belongs_to :booking
 
   validates :number, presence: true
+
+
 end

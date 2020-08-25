@@ -1,30 +1,37 @@
 class PackagesController < ApplicationController
+  before_action :set_user, onlyly: [:new, :create]
 
     def new
     @package = Package.new
+    create
   end
-
 
   def create
     @package = Package.new(params_package)
-    @furniture = Furniture.find(params[:furniture_id])
-    @package.furniture = @furniture
     @booking = current_user.bookings.find_by(status: "pending")
     @package.booking = @booking
+    @package.save
     if @package.save!
-      redirect_to package_path
+      # notifiction "added to your packages
+      redirect_to packages_path
     else
-      render :new
+      redirect_to furniture_path
     end
   end
 
   def index
-    @package = Package.all
+
+    @current_user_packages = Package.all.filter { |package| package.booking.user == current_user }
+
   end
 
   private
 
   def params_package
-    params.require(:package).permit(:number)
+   params.require(:package).permit(:number, :furniture_id)
+  end
+
+  def set_user
+    @user = current_user
   end
 end

@@ -1,4 +1,21 @@
 
+<h1>Compose your package</h1>
+<% @furnitures.each do |furniture| %>
+  <ul>
+    <li><%= furniture.name %></li>
+    <li><%= furniture.description %></li>
+    <li><%= furniture.retail_price %></li>
+    <li><%= furniture.rental_price %></li>
+    <li><%= furniture.category %></li>
+    <%= simple_form_for Package.new do |f| %>
+      <%= f.input :furniture_id, as: :hidden, input_html: { value: furniture.id } %>
+      <%= f.input :number %>
+      <%= f.submit %>
+    <% end %>
+  </ul>
+<% end %>
+
+
 <div class= "row">
 
   <div class= "col-3">
@@ -43,3 +60,4 @@
   </div>
 
 </div>
+
