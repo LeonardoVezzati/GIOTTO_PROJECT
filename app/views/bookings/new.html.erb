@@ -1,0 +1,13 @@
+
+  <h2>Your're only a few steps away from your dream office!</h2>
+  <h2>Rent it now!</h2>
+  <%=simple_form_for [@package, @booking] do |f|%>
+      <%= f.input :delivery_date %>
+      <%= f.input :delivery_time %>
+      <%= f.input :delivery_address %>
+      <%= f.input :delivery_floor %>
+      <%= f.input :building_elevator %>
+      <%= f.input :external_elevator %>
+      <%=f.submit "Confirm booking", class: "btn btn-primary my-3" %>
+<%end %>
+</div>
