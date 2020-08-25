@@ -6,14 +6,54 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-package02 = Package.create(
-  furniture_id: 2,
-  booking_id: 1,
-  number: 1
+
+
+
+rookie_chair = Furniture.create(
+  name: "Rookie",
+  description: "Rookie is a small, agile and unconventionally simple chair. It provides a high level of immediate comfort with a minimal number of adjustments. Both the seat and backrest of Rookie are height-adjustable. In addition to these classic functions of a task chair, other ergonomic features are directly incorporated into Rookie's structural design: the backrest flexes slightly when pressure is applied, and the front edge of the seat is unusually pliant.",
+  retail_price: 399,
+  category: "Chairs",
 )
 
-package03 = Package.create(
-  furniture_id: 3,
-  booking_id: 1,
-  number: 1
+se_motion_chair = Furniture.create(
+  name: "Se:Motion",
+  description: "Whether in black or light grey, se:motion emits a sense of dynamic lightness. Moreover, the style is far more than a mere design statement. The perforated backrest ensures elasticity and maximum sitting comfort. The same applies for the ideally positioned lumbar curve and the ergonomically designed seat with slim edges – the impressive looking design ensures both a good posture and mobility.",
+  retail_price: 345,
+  category: "Chairs", 
+)
+
+d1_chair = Furniture.create(
+  name: "D1",
+  description: "The D1 office chair unites an aesthetic design, innovative materials and dynamic sitting characteristics. Thanks to the construction of the steel tube frame with mesh, the seat adjusts perfectly to the sitting position and stimulates the user to sit actively and more dynamically. The D1 is an award winning office chair (Red Dot Award, German Innovation Award & German Design Award Winner).",
+  retail_price: 779,
+  category: "Chairs", 
+)
+
+nova_a_desk = Furniture.create(
+  name: "Nova A",
+  description: "The Nova A desk is a modern classic. The universal design and the functional desking system allow to fit into every sort of interior. A-shaped legs are sure to add subtle look and elegance to Nova A desks.",
+  retail_price: 320,
+  category: "Desks",
+)
+
+nova_wood_desk = Furniture.create(
+  name: "Nova Wood",
+  description: "The Nova Wood desk will allow you to create a desired style whether you want it to convey a feeling of warmth and cosiness, resemble a modern loft interior or create an atmosphere of subtle luxury. Every table is unique due to solid ash wood legs. The Nova Wood desk is an award winning desk (Red Dot Design Award).",
+  retail_price: 540,
+  category: "Desk",
+)
+
+petite_lamp = Furniture.create(
+  name: "Petite Lampe",
+  description: "Want to add a splash of colour? Then the Petite Lampe is the perfect detail to add in your home office. This lamp with its adjustable lampshade can be installed practically everywhere; on a bedside table, in a living room, on a desk.",
+  retail_price: 149,
+  category: "Lamps",
+)
+
+lolly_lamp = Furniture.create(
+  name: "Lolly Lamp",
+  description: "The Lolly Lamp is an elegant source of long-lasting LED light that takes up just enough space on a desk to power people’s productivity. This compact work light meets your needs with its tilting head, charging ports, and touch-sensitive dimming settings—all features that will brighten any workspace.",
+  retail_price: 190,
+  category: "Lamps", 
 )

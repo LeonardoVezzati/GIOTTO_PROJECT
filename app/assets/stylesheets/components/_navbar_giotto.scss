@@ -1,0 +1,27 @@
+.navbar-giotto {
+  background: #FAF0E1;
+  height: 96px;
+  font-size: 24px;
+  font-family: Futura, medium;
+}
+
+
+.navbar-left-giotto {
+  justify-content: left;
+}
+
+.navbar-center-giotto {
+}
+
+.navbar-center-giotto img{
+  display: block;
+  max-width: 100%;
+  position: fixed;
+  width: 80px;
+  align-content: center;
+}
+
+.navbar-right-giotto {
+  position: fixed;
+  justify-content: right;
+}
