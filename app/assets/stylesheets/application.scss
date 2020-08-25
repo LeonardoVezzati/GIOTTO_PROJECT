@@ -11,4 +11,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.row-container {
+  max-width: 100%;
+}
+.lateral-menu-logo {
+  margin-right: 16px;
+  width: 24px;
+}
+
 @import "packages_index.scss";

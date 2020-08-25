@@ -1,27 +1,86 @@
 .navbar-giotto {
   background: #FAF0E1;
-  height: 96px;
+  height: 120px;
   font-size: 24px;
   font-family: Futura, medium;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 90000000;
 }
 
-
-.navbar-left-giotto {
-  justify-content: left;
+.list-inline-right {
+  height: 100%;
+  width: 100%;
+  padding-right: 40px;
+  list-style: none;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0;
 }
-
-.navbar-center-giotto {
+.list-inline-left {
+  height: 100%;
+  width: 100%;
+  padding-left: 40px;
+  list-style: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0;
 }
-
-.navbar-center-giotto img{
-  display: block;
-  max-width: 100%;
-  position: fixed;
-  width: 80px;
+.list-inline-center {
+  height: 100%;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
   align-content: center;
+  text-justify: center;
+  margin-bottom: 0;
 }
 
-.navbar-right-giotto {
-  position: fixed;
-  justify-content: right;
+.list-inline-right li {
+  display: inline-block;
+  list-style: none;
+  
+}
+
+.list-inline-left li {
+  display: inline-block;
+  list-style: none;
+}
+
+.text-list-right {
+  margin-left: 40px;
+}
+.text-list-left {
+  margin-left: 40px;
+}
+
+.text-list-dashboard {
+  background-color: #FAF0E1;
+  border: 2px solid #2B313D;
+  padding: 12px 32px;
+  border-radius: 60px;
+  margin-left: 40px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img  {
+    height: 72px;
+  }
+}
+
+.flex1 {
+  flex: 1;
 }

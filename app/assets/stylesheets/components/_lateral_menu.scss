@@ -1,13 +1,12 @@
 .lateral_menu {
   position: fixed;
   width: 360px;
-  height: 100vh;
+  height: calc(100vh - 96px);
   background-color: white;
   box-shadow: 2px 0px 16px rgb(235, 235, 235);
 }
 
 .lateral_menu_list {
-  position: fixed;
   padding-top: 80px;
 }
 
