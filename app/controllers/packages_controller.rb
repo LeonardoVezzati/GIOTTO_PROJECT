@@ -22,6 +22,8 @@ class PackagesController < ApplicationController
     @package = Package.all
   end
 
+  private
+
   def params_package
     params.require(:package).permit(:number)
   end
