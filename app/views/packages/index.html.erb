@@ -46,13 +46,26 @@
 
     <div class= "index-list ">
 
-      <div class="flex-item">
+      <div class="flex-item ">
 
 
        <div class="flex-row d-flex justify-content-around">
-        <div class="card card-index-info " style="width: 17rem">
-          <div class="card-body top-card">
+        <div class="card card-index-info align-items-center " >
+          <div class="card-body top-card ">
             <p>Tot / month:</p>
+            <% @total = 0 %>
+            <% @current_user_packages.each do |package| %>
+            <% @total += package.furniture.retail_price / 5  %>
+            <% end %>
+            <h2 class="furniture-title item-product index-title ">
+              <%= @total %>
+            </h2>
+          </div>
+        </div>
+
+           <div class="card card-index-info align-items-center ">
+          <div class="card-body top-card">
+            <p>Available budget:</p>
             <% @total = 0 %>
             <% @current_user_packages.each do |package| %>
             <% @total += package.furniture.retail_price / 5  %>
@@ -63,22 +76,9 @@
           </div>
         </div>
 
-           <div class="card card-index-info" style="width: 17rem">
+           <div class="card card-index-info align-items-center" >
           <div class="card-body top-card">
-            <p>Tot / month:</p>
-            <% @total = 0 %>
-            <% @current_user_packages.each do |package| %>
-            <% @total += package.furniture.retail_price / 5  %>
-            <% end %>
-            <h2 class="furniture-title item-product index-title">
-              <%= @total %>
-            </h2>
-          </div>
-        </div>
-
-           <div class="card card-index-info" style="width: 17rem">
-          <div class="card-body top-card">
-            <p>Tot / month:</p>
+            <p>Rental lemght:</p>
             <% @total = 0 %>
             <% @current_user_packages.each do |package| %>
             <% @total += package.furniture.retail_price / 5  %>
@@ -104,14 +104,15 @@
 
   <div class="flex-row d-flex justify-content-around">
   <% @current_user_packages.each do |package| %>
-    <div class="card item-card" style="width: 17rem;">
+    <div class="card item-card card-item" style="max-width: 17rem;">
       <img class="card-img-top" src="https://source.unsplash.com/1600x900/?furniture,desk
     " alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title"><%= package.furniture.name %></h5>
-        <p class="card-text">Retail price <%= package.furniture.retail_price %>$</p>
-        <p class="card-text">Rental / month <%= package.furniture.retail_price / 5 %>$</p>
-        <p class="card-text">Retail price <%= package.furniture.retail_price %>$</p>
+        <p class="card-text"><%= package.furniture.retail_price %>$</p>
+        <p class="card-text">Delivery date <%= package.furniture.retail_price %>$</p>
+        <p class="card-text">Expiry date <%= package.furniture.retail_price / 5 %>$</p>
+        <p class="card-text">Rental plan <%= package.furniture.retail_price %>$</p>
         <p class="card-text">Rental / month <%= package.furniture.retail_price / 5 %>$</p>
         <div class="delete-button">
           <%= link_to "x",
@@ -122,6 +123,16 @@
       </div>
     </div>
   <% end %>
+
+    <div class="card item-card card-item" style="max-width: 17rem;">
+
+      <div class="card-body">
+        <div class="">
+          <%= link_to "+", furnitures_path %>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 

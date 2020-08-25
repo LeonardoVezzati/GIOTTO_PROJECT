@@ -1,5 +1,5 @@
 .card {
-  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .2);
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .1);
   margin-top: 30px;
 }
 
@@ -84,8 +84,20 @@ a {
     margin-left: 360px;
     padding-left: 96px;
 }
-row-container {
+.row-container {
     display: flex;
     width: 100%;
 }
 
+h2  {
+  padding: 0px;
+}
+
+.card-index-info {
+  max-width: 17rem;
+  min-width: 12rem;
+}
+
+card-item {
+  margin: 25px;
+}
