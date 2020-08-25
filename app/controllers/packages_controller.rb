@@ -20,8 +20,13 @@ class PackagesController < ApplicationController
   end
 
   def index
-
     @current_user_packages = Package.all.filter { |package| package.booking.user == current_user }
+  end
+
+  def destroy
+    @package = Package.find(params[:id])
+    @package.destroy
+    redirect_to packages_path
 
   end
 
