@@ -1,0 +1,26 @@
+ <div class="flex-item">
+      <div class="card card-index-info" style="width: 25rem">
+  <div class="card-body">
+    <p>Tot / month:</p>
+
+    <% @total = 0 %>
+    <% @current_user_packages.each do |package| %>
+    <% @total += package.furniture.retail_price / 5  %>
+    <% end %>
+    <h2 class="furniture-title item-product index-title">
+      <%= @total %>
+    </h2>
+  </div>
+</div>
+<% @current_user_packages.each do |package| %>
+<div class="card" style="width: 13rem;">
+  <img class="card-img-top" src="https://source.unsplash.com/1600x900/?furniture,desk
+" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= package.furniture.name %></h5>
+    <p class="card-text">Retail price <%= package.furniture.retail_price %>$</p>
+    <p class="card-text">Rental / month <%= package.furniture.retail_price / 5 %>$</p>
+    <a href="#" class="btn btn-primary">Remove</a>
+  </div>
+</div>
+ <% end %>
