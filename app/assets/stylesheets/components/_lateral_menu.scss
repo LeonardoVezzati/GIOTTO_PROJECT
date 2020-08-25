@@ -1,0 +1,31 @@
+.lateral_menu {
+  position: fixed;
+  width: 360px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0px 16px rgb(235, 235, 235);
+}
+
+.lateral_menu_list {
+  position: fixed;
+  padding-top: 80px;
+}
+
+.lateral_menu_list li {
+  font-size: 24px;
+  font-family: Futura, medium;
+  letter-spacing: 1px;
+  line-height: 3;
+  text-decoration: none;
+  list-style: none;
+  margin-left: 16px;
+  padding-top: 24px;
+  color: rgb(160, 160, 160);
+  transition: 0.4s;
+}
+
+.lateral_menu_list li:hover {
+  font-size: 26px;
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
