@@ -13,9 +13,9 @@ class PackagesController < ApplicationController
     @package.save
     if @package.save!
       # notifiction "added to your packages
-      redirect_to packages_path
+      redirect_to furnitures_path
     else
-      redirect_to furniture_path
+
     end
   end
 

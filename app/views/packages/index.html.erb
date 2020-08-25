@@ -1,32 +1,137 @@
- <div class="flex-item">
-      <div class="card card-index-info" style="width: 25rem">
-  <div class="card-body">
-    <p>Tot / month:</p>
+ <body>
+<div class="navbar-giotto">
 
-    <% @total = 0 %>
-    <% @current_user_packages.each do |package| %>
-    <% @total += package.furniture.retail_price / 5  %>
-    <% end %>
-    <h2 class="furniture-title item-product index-title">
-      <%= @total %>
-    </h2>
-  </div>
-</div>
-<% @current_user_packages.each do |package| %>
-<div class="card" style="width: 13rem;">
-  <img class="card-img-top" src="https://source.unsplash.com/1600x900/?furniture,desk
-" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><%= package.furniture.name %></h5>
-    <p class="card-text">Retail price <%= package.furniture.retail_price %>$</p>
-    <p class="card-text">Rental / month <%= package.furniture.retail_price / 5 %>$</p>
-    <div class="list-group-item">
-      <%= link_to "Remove",
-                  package_path(package),
-                  method: :delete,
-                  data: { confirm: "Are you sure ?" } %>
+
+    <div class='flex1'>
+        <ul class='list-inline-left'>
+          <li class='text-list-dashboard'>Dashboard</li>
+          <li class='text-list-left'>About us</li>
+        </ul>
     </div>
 
+    <div class='flex1'>
+      <div class='logo-container'>
+        <%=image_tag 'logo.png'%>
+      </div>
+    </div>
+
+
+    <div class='flex1'>
+        <ul class='list-inline-right'>
+          <li class='text-list-right'>Search</li>
+          <li class='text-list-right'>Account</li>
+        </ul>
+    </div>
+
+</div>
+
+  <div class= "row-container">
+
+      <div class= lateral_menu>
+
+            <ul class= lateral_menu_list>
+              <li><i class="fas fa-user-plus lateral-menu-logo"></i>Manage your team</li>
+              <li><i class="fas fa-bars lateral-menu-logo"></i>Furnitures</li>
+              <li><i class="fas fa-gift lateral-menu-logo"></i>My package</li>
+              <li><i class="fas fa-truck lateral-menu-logo"></i>My deliveries</li>
+              <li><i class="fas fa-wallet lateral-menu-logo"></i>My wallet</li>
+              <li><i class="far fa-file-alt lateral-menu-logo"></i>Invoices</li>
+            </ul>
+
+            <ul class= lateral_menu_list>
+              <li><i class="fas fa-user-cog lateral-menu-logo"></i>Settings</li>
+            </ul>
+
+      </div>
+
+    <div class= "index-list ">
+
+      <div class="flex-item">
+
+
+       <div class="flex-row d-flex justify-content-around">
+        <div class="card card-index-info " style="width: 17rem">
+          <div class="card-body top-card">
+            <p>Tot / month:</p>
+            <% @total = 0 %>
+            <% @current_user_packages.each do |package| %>
+            <% @total += package.furniture.retail_price / 5  %>
+            <% end %>
+            <h2 class="furniture-title item-product index-title">
+              <%= @total %>
+            </h2>
+          </div>
+        </div>
+
+           <div class="card card-index-info" style="width: 17rem">
+          <div class="card-body top-card">
+            <p>Tot / month:</p>
+            <% @total = 0 %>
+            <% @current_user_packages.each do |package| %>
+            <% @total += package.furniture.retail_price / 5  %>
+            <% end %>
+            <h2 class="furniture-title item-product index-title">
+              <%= @total %>
+            </h2>
+          </div>
+        </div>
+
+           <div class="card card-index-info" style="width: 17rem">
+          <div class="card-body top-card">
+            <p>Tot / month:</p>
+            <% @total = 0 %>
+            <% @current_user_packages.each do |package| %>
+            <% @total += package.furniture.retail_price / 5  %>
+            <% end %>
+            <h2 class="furniture-title item-product index-title">
+              <%= @total %>
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="package_title">
+        <h3>Your package:</h3>
+        <div class="separator"></div>
+      </div>
+
+
+       <div class="package_title flex-row d-flex justify-content-between align-items-center">
+        <h3>Your 1st package</h3>
+        <%= link_to "Plan my delivery", new_booking_path, class: 'btn btn-primary btn-delivery' %>
+      </div>
+
+
+  <div class="flex-row d-flex justify-content-around">
+  <% @current_user_packages.each do |package| %>
+    <div class="card item-card" style="width: 17rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/1600x900/?furniture,desk
+    " alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= package.furniture.name %></h5>
+        <p class="card-text">Retail price <%= package.furniture.retail_price %>$</p>
+        <p class="card-text">Rental / month <%= package.furniture.retail_price / 5 %>$</p>
+        <p class="card-text">Retail price <%= package.furniture.retail_price %>$</p>
+        <p class="card-text">Rental / month <%= package.furniture.retail_price / 5 %>$</p>
+        <div class="delete-button">
+          <%= link_to "x",
+                      package_path(package),
+                      method: :delete,
+                      data: { confirm: "Are you sure ?" } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
   </div>
 </div>
- <% end %>
+
+<div class="separator"></div>
+
+
+    </div>
+
+
+  </div>
+
+ </body>
+
