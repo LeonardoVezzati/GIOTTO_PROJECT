@@ -2,4 +2,20 @@
     <div class= "text-center">
       <h1> Your bookings </h1>
       <p> All your bookings at a glance </p>
-    </div>
+</div>
+
+<div class="container">
+  <% @bookings.each do |booking| %>
+     <div>
+        <h2><%= booking.status %></h2>
+     </div>
+     <div>
+       <h2><%= booking.delivery_date %></h2>
+     </div>
+     <div>
+
+        <%= link_to "See booking", booking_path(booking), class: "btn btn-danger" %>
+
+      </div>
+  <% end %>
+</div>
