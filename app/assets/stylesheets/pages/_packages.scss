@@ -1,7 +1,17 @@
 .card {
   box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .1);
   margin-top: 30px;
+  max-height: 400px;
+
 }
+
+.card-show {
+  display: flex;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, .1);
+  margin-top: 30px;
+
+}
+
 
 .card-body {
   margin-left: 15px;
