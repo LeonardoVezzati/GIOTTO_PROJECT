@@ -42,7 +42,7 @@ class BookingsController < ApplicationController
   private
 
   def params_booking
-    params.require(:booking).permit(:delivery_date, :floor, :building_elevator, :external_elevator, :delivery_address)
+    params.require(:booking).permit(:delivery_date, :floor, :building_elevator, :external_elevator, :delivery_address, :delivery_time)
   end
 
 end
