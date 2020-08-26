@@ -20,7 +20,7 @@ class PackagesController < ApplicationController
   end
 
   def index
-    @current_user_packages = Package.all.filter { |package| package.booking.user == current_user }
+    @current_user_packages = current_user.bookings.map{|b| b.packages }.flatten
   end
 
   def destroy
