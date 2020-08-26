@@ -1,38 +1,23 @@
 <div class= "row row-container">
 
-  <div class= "col-3">
-    <div class= lateral_menu>
-        
-      <ul class= lateral_menu_list>
-              <li><i class="fas fa-user-plus lateral-menu-logo"></i>Manage your team</li>
-              <li><i class="fas fa-bars lateral-menu-logo"></i>Furnitures</li>
-              <li><i class="fas fa-gift lateral-menu-logo"></i>My package</li>
-              <li><i class="fas fa-truck lateral-menu-logo"></i>My deliveries</li>
-              <li><i class="fas fa-wallet lateral-menu-logo"></i>My wallet</li>
-              <li><i class="far fa-file-alt lateral-menu-logo"></i>Invoices</li>
-      </ul>
 
-      <ul class= lateral_menu_list>
-        <li><i class="fas fa-user-cog lateral-menu-logo"></i>Settings</li>
-      </ul>
+<%= render 'shared/lateral_menu' %>
 
-    </div>
-  </div>
 
-  <div class= "col-9 index-list">
+  <div class= "index-list">
      <div class="container-filter">
       <div class="card-product-small justify-content-left align-items-center">
         <div class="filter">
-        <%= link_to furnitures_path(category: "") do %>
-        <span> All </span>
-        <% end %>
+          <%= link_to furnitures_path(category: "") do %>
+            <span> All </span>
+          <% end %>
         </div>
 
-    <div class="filter">
-      <%= link_to furnitures_path(category: "Chairs") do %>
-        <span> Chair </span>
-      <% end %>
-    </div>
+        <div class="filter">
+          <%= link_to furnitures_path(category: "Chairs") do %>
+            <span> Chair </span>
+          <% end %>
+        </div>
 
     <div class="filter">
       <%= link_to furnitures_path(category: "Desks") do %>
@@ -49,15 +34,17 @@
     </div>
 
     <div class="row">
-    <% @furnitures.each do |furniture| %>
-      <div class="col-4 card">
-        <%= cl_image_tag furniture.photo %>
+      <% @furnitures.each do |furniture| %>
+        <div class="col-4 card">
+          <div>
+            <%= link_to furniture_path(furniture) do %> <%= cl_image_tag furniture.photo, width: 266, height: 266, crop: :fit %> <% end %>
+          </div>
           <ul>
             <li><%= furniture.name %></li>
             <li>from €<%= furniture.retail_price/24 %>/month</li>
           </ul>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
                 

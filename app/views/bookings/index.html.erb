@@ -1,58 +1,16 @@
-<div class="navbar-giotto">
 
-
-    <div class='flex1'>
-        <ul class='list-inline-left'>
-          <li class='text-list-dashboard'>Dashboard</li>
-          <li class='text-list-left'>About us</li>
-        </ul>
-    </div>
-
-    <div class='flex1'>
-      <div class='logo-container'>
-        <%=image_tag 'logo.png'%>
-      </div>
-    </div>
-
-
-    <div class='flex1'>
-        <ul class='list-inline-right'>
-          <li class='text-list-right'>Search</li>
-          <li class='text-list-right'>Account</li>
-        </ul>
-    </div>
-
-</div>
 <div class= "row row-container">
-
-    <div class= "col-3">
-      <div class= lateral_menu>
-
-            <ul class= lateral_menu_list>
-              <li><i class="fas fa-user-plus lateral-menu-logo"></i>Manage your team</li>
-              <li><i class="fas fa-bars lateral-menu-logo"></i>Furnitures</li>
-              <li><i class="fas fa-gift lateral-menu-logo"></i>My package</li>
-              <li><i class="fas fa-truck lateral-menu-logo"></i>My deliveries</li>
-              <li><i class="fas fa-wallet lateral-menu-logo"></i>My wallet</li>
-              <li><i class="far fa-file-alt lateral-menu-logo"></i>Invoices</li>
-            </ul>
-
-            <ul class= lateral_menu_list>
-              <li><i class="fas fa-user-cog lateral-menu-logo"></i>Settings</li>
-            </ul>
-
-      </div>
-    </div>
-
-<div class ="container">
+  <%= render 'shared/lateral_menu' %>
+  <div class= "index-list ">
+    
     <div class= "text-center">
       <h1> Your bookings </h1>
-      <p> All of your bookings at a glance </p>
-</div>
+      <p> All your bookings at a glance </p>
+    </div>
+        
+    
+    <% @bookings.each do |booking| %>
 
-<div class="container">
-  <% @bookings.each do |booking| %>
-  <div class="reactangle">
       <div>
         <h2><%= booking.status %></h2>
       </div>
@@ -60,20 +18,14 @@
         <h2><%= booking.delivery_date %></h2>
       </div>
       <div>
-
         <%= link_to "Booking details", booking_path(booking), class: "btn btn-danger" %>
-
       </div>
-    </div>
-  <% end %>
+
+    <% end %>
+
+    <h2> Add new booking here </h2>
+    <%= link_to "Create new booking", new_booking_path(@booking), class: "btn btn-danger" %>
+  
+  </div>
 </div>
-
-
-
-<div class ="container">
-  <h2> Add new booking here </h2>
-  <%= link_to "Create new booking", new_booking_path(@booking), class: "btn btn-danger" %>
-</div>
-
-
 
