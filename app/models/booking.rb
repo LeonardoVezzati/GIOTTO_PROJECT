@@ -7,4 +7,5 @@ class Booking < ApplicationRecord
   validates :status, presence: true
   validates :floor, presence: true
 
+  
 end

@@ -41,7 +41,7 @@
           </div>
           <ul>
             <li><%= furniture.name %></li>
-            <li>from €<%= furniture.retail_price/24 %>/month</li>
+            <li>from <%= humanized_money_with_symbol(furniture.price/24) %>/month</li>
           </ul>
         </div>
       <% end %>
