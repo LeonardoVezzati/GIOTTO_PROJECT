@@ -27,7 +27,6 @@ class PackagesController < ApplicationController
     @package = Package.find(params[:id])
     @package.destroy
     redirect_to packages_path
-
   end
 
   private

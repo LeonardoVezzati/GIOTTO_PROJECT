@@ -1,28 +1,31 @@
-<div class ="container">
+
+<div class= "row row-container">
+  <%= render 'shared/lateral_menu' %>
+  <div class= "index-list ">
+    
     <div class= "text-center">
       <h1> Your bookings </h1>
       <p> All your bookings at a glance </p>
-</div>
+    </div>
+        
+    
+    <% @bookings.each do |booking| %>
 
-<div class="container">
-  <% @bookings.each do |booking| %>
-     <div>
+      <div>
         <h2><%= booking.status %></h2>
-     </div>
-     <div>
-       <h2><%= booking.delivery_date %></h2>
-     </div>
-     <div>
-
-        <%= link_to "Booking details", booking_path(booking), class: "btn btn-danger" %>
-
       </div>
-  <% end %>
-</div>
+      <div>
+        <h2><%= booking.delivery_date %></h2>
+      </div>
+      <div>
+        <%= link_to "Booking details", booking_path(booking), class: "btn btn-danger" %>
+      </div>
 
+    <% end %>
 
-<div class ="container">
-  <h2> Add new booking here </h2>
-  <%= link_to "Create new booking", new_booking_path(@booking), class: "btn btn-danger" %>
+    <h2> Add new booking here </h2>
+    <%= link_to "Create new booking", new_booking_path(@booking), class: "btn btn-danger" %>
+  
+  </div>
 </div>
 
