@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :furnitures, only: [:index, :show]
   resources :bookings
   resources :packages
-  
+  resources :teams
 
 end
