@@ -9,6 +9,17 @@
 Furniture.destroy_all
 
 
+
+#team = Team.create(
+#  company: "Giotto",
+#  rental_period: 9,
+#  budget: 600,
+#)
+
+
+
+
+
 rookie_chair = Furniture.create(
   name: "Rookie",
   description: "Rookie is a small, agile and unconventionally simple chair. It provides a high level of immediate comfort with a minimal number of adjustments. Both the seat and backrest of Rookie are height-adjustable. In addition to these classic functions of a task chair, other ergonomic features are directly incorporated into Rookie's structural design: the backrest flexes slightly when pressure is applied, and the front edge of the seat is unusually pliant.",
@@ -64,3 +75,4 @@ lolly_lamp = Furniture.create(
   category: "Lamps",
   photo: 'lolly_lamp_1'
 )
+

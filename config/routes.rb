@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   resources :furnitures, only: [:index, :show]
   resources :bookings
   resources :packages
-  
+  resources :teams do
+    collection do
+      get "team_packages", to: "teams#packages"
+    end
+  end
 
 end
