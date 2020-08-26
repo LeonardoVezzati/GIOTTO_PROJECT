@@ -13,4 +13,6 @@ class User < ApplicationRecord
   #self.bookings.create({status: "pending"})
  end
 
+
+
 end
