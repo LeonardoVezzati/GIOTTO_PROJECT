@@ -14,8 +14,15 @@
      </div>
      <div>
 
-        <%= link_to "See booking", booking_path(booking), class: "btn btn-danger" %>
+        <%= link_to "Booking details", booking_path(booking), class: "btn btn-danger" %>
 
       </div>
   <% end %>
 </div>
+
+
+<div class ="container">
+  <h2> Add new booking here </h2>
+  <%= link_to "Create new booking", new_booking_path(@booking), class: "btn btn-danger" %>
+</div>
+
