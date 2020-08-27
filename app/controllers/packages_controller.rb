@@ -1,7 +1,7 @@
 class PackagesController < ApplicationController
   before_action :set_user, onlyly: [:new, :create]
 
-    def new
+  def new
     @package = Package.new
     create
   end
@@ -10,7 +10,7 @@ class PackagesController < ApplicationController
     @package = Package.new(params_package)
     @booking = current_user.bookings.find_by(status: "pending")
     @package.booking = @booking
-    @package.save
+    @package.save!
     if @package.save!
       # notifiction "added to your packages
       redirect_to furnitures_path

@@ -14,7 +14,7 @@
             <p>Tot / month:</p>
             <% @total = 0 %>
             <% @current_user_packages.each do |package| %>
-            <% @total += package.furniture.retail_price / 5  %>
+            <% @total += package.furniture.price / 5  %>
             <% end %>
             <h2 class="furniture-title item-product index-title ">
               <%= @total %>
@@ -27,7 +27,7 @@
             <p>Available budget:</p>
             <% @total = 0 %>
             <% @current_user_packages.each do |package| %>
-            <% @total += package.furniture.retail_price / 5  %>
+            <% @total += package.furniture.price / 5  %>
             <% end %>
             <h2 class="furniture-title item-product index-title">
               <%= @total %>
@@ -40,7 +40,7 @@
             <p>Rental lemght:</p>
             <% @total = 0 %>
             <% @current_user_packages.each do |package| %>
-            <% @total += package.furniture.retail_price / 5  %>
+            <% @total += package.furniture.price / 5  %>
             <% end %>
             <h2 class="furniture-title item-product index-title">
               <%= @total %>
@@ -69,10 +69,10 @@
       <div class="card-body">
         <h5 class="card-title"><%= package.furniture.name %></h5>
         <p class="card-text"><%= package.furniture.retail_price %>$</p>
-        <p class="card-text">Delivery date <%= package.furniture.retail_price %>$</p>
-        <p class="card-text">Expiry date <%= package.furniture.retail_price / 5 %>$</p>
-        <p class="card-text">Rental plan <%= package.furniture.retail_price %>$</p>
-        <p class="card-text">Rental / month <%= package.furniture.retail_price / 5 %>$</p>
+        <p class="card-text">Delivery date <%= package.furniture.price %>$</p>
+        <p class="card-text">Expiry date <%= package.furniture.price / 5 %>$</p>
+        <p class="card-text">Rental plan <%= package.furniture.price %>$</p>
+        <p class="card-text">Rental / month <%= package.furniture.price / 5 %>$</p>
         <div class="delete-button">
           <%= link_to "x",
                       package_path(package),
