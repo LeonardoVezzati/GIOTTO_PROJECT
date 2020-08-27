@@ -7,7 +7,7 @@
       <li><%= @furniture.description %></li>
       <li><%= @furniture.price %></li>
       <li><%= @furniture.category %></li>
-          <%= simple_form_for Package.new do |f| %>
+          <%= simple_form_for @package do |f| %>
         <%= f.input :furniture_id, as: :hidden, input_html: { value: params[:id] } %>
         <%= f.input :number %>
         <%= f.submit %>
