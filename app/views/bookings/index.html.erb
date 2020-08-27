@@ -11,21 +11,32 @@
     
     <% @bookings.each do |booking| %>
 
+<div class ="container">
+  <h2> Add new booking here </h2>
+  <%= link_to "Plan new delivery", new_booking_path(@booking), class: "btn btn-primary btn-delivery" %>
+
+</div>
+
+<div class="container">
+  <% @bookings.each do |booking| %>
+    <div class=delivery-card>
+      <p class="next-delivery">Your next delivery</p>
       <div>
         <h2><%= booking.status %></h2>
       </div>
       <div>
         <h2><%= booking.delivery_date %></h2>
       </div>
-      <div>
-        <%= link_to "Booking details", booking_path(booking), class: "btn btn-danger" %>
+
+
+
+        <%= link_to "Update", edit_booking_path(booking), class: "btn btn-primary btn-create" %>
+        <%= link_to "Delete", booking_path(booking), method: :delete, class: "btn btn-primary btn-create" %>
+
+
       </div>
 
     <% end %>
 
-    <h2> Add new booking here </h2>
-    <%= link_to "Create new booking", new_booking_path(@booking), class: "btn btn-danger" %>
-  
-  </div>
-</div>
+
 
