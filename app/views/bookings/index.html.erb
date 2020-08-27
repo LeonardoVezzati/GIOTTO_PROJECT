@@ -1,28 +1,4 @@
-<div class="navbar-giotto">
 
-
-    <div class='flex1'>
-        <ul class='list-inline-left'>
-          <li class='text-list-dashboard'>Dashboard</li>
-          <li class='text-list-left'>About us</li>
-        </ul>
-    </div>
-
-    <div class='flex1'>
-      <div class='logo-container'>
-        <%=image_tag 'logo.png'%>
-      </div>
-    </div>
-
-
-    <div class='flex1'>
-        <ul class='list-inline-right'>
-          <li class='text-list-right'>Search</li>
-          <li class='text-list-right'>Account</li>
-        </ul>
-    </div>
-
-</div>
 <div class= "row row-container">
 
     <div class= "col-3">
@@ -50,18 +26,26 @@
       <p> All of your bookings at a glance </p>
 </div>
 
+<div class ="container">
+  <h2> Add new booking here </h2>
+  <%= link_to "Plan new delivery", new_booking_path(@booking), class: "btn btn-primary btn-delivery" %>
+
+</div>
+
 <div class="container">
   <% @bookings.each do |booking| %>
-  <div class="reactangle">
+    <div class=delivery-card>
+      <p class="next-delivery">Your next delivery</p>
       <div>
         <h2><%= booking.status %></h2>
       </div>
       <div>
         <h2><%= booking.delivery_date %></h2>
       </div>
-      <div>
 
-        <%= link_to "Booking details", booking_path(booking), class: "btn btn-danger" %>
+
+        <%= link_to "Update", edit_booking_path(booking), class: "btn btn-primary btn-create" %>
+        <%= link_to "Delete", booking_path(booking), method: :delete, class: "btn btn-primary btn-create" %>
 
       </div>
     </div>
@@ -70,10 +54,6 @@
 
 
 
-<div class ="container">
-  <h2> Add new booking here </h2>
-  <%= link_to "Create new booking", new_booking_path(@booking), class: "btn btn-danger" %>
-</div>
 
 
 
