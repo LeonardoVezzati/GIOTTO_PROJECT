@@ -13,7 +13,4 @@ class User < ApplicationRecord
  def create_booking
   #self.bookings.create({status: "pending"})
  end
-
-
-
 end
