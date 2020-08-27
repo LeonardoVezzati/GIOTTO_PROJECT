@@ -5,32 +5,64 @@
 
 
   <div class= "index-list">
-     <div class="container-filter">
-      <div class="card-product-small justify-content-left align-items-center">
-        <div class="filter">
-          <%= link_to furnitures_path(category: "") do %>
-            <span> All </span>
-          <% end %>
+
+    <div class="flex-item ">
+
+    <div class = "row">
+      
+      <div class="container-filter">
+        <div class="card-product-small justify-content-left align-items-center">
+          <div class="filter">
+            <%= link_to furnitures_path(category: "") do %>
+              <span> All </span>
+            <% end %>
+          </div>
+
+          <div class="filter">
+            <%= link_to furnitures_path(category: "Chairs") do %>
+              <span> Chair </span>
+            <% end %>
+          </div>
+
+          <div class="filter">
+            <%= link_to furnitures_path(category: "Desks") do %>
+              <span> Desk </span>
+            <% end %>
+          </div>
+
+          <div class="filter">
+            <%= link_to furnitures_path(category: "Lamps") do %>
+              <span> Lamp </span>
+            <% end %>
+          </div>
         </div>
-
-        <div class="filter">
-          <%= link_to furnitures_path(category: "Chairs") do %>
-            <span> Chair </span>
-          <% end %>
-        </div>
-
-    <div class="filter">
-      <%= link_to furnitures_path(category: "Desks") do %>
-        <span> Desk </span>
-      <% end %>
-    </div>
-
-    <div class="filter">
-      <%= link_to furnitures_path(category: "Lamps") do %>
-        <span> Lamp </span>
-      <% end %>
-    </div>
       </div>
+
+      <div class="flex-row d-flex justify-content-around">
+        <div class="card card-index-info align-items-center ">
+          <div class="card-body top-card ">
+            <p>Tot / month:</p>
+            <h2 class="furniture-title item-product index-title ">0</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-row d-flex justify-content-around">
+        <div class="card card-index-info align-items-center ">
+          <div class="card-body top-card ">
+            <%= link_to "See my package", packages_path, class: "furniture-title item-product index-title" %> 
+          </div>
+        </div>
+      </div>     
+      <div class="flex-row d-flex justify-content-around">
+        <div class="card card-index-info align-items-center ">
+          <div class="card-body top-card ">
+            <p>Choose a rental period</p> 
+            <h2></h2>
+          </div>
+        </div>
+      </div>     
+     
     </div>
 
     <div class="row">
@@ -50,16 +82,3 @@
 
 </div>
 
-<div class="flex-item ">
-
-
-       <div class="flex-row d-flex justify-content-around">
-        <div class="card card-index-info align-items-center ">
-          <div class="card-body top-card ">
-            <p>Tot / month:</p>
-            <h2 class="furniture-title item-product index-title ">
-              0
-            </h2>
-          </div>
-        </div>
-</div>

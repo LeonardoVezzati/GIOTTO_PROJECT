@@ -1,0 +1,22 @@
+<div class= "row row-container">
+  <%= render 'shared/lateral_menu' %>
+  <div class= "index-list">
+
+    <div class="flex-item ">
+      <div class="package_title">
+        <h3>Your Invoices:</h3>
+        <div class="separator">
+        </div>
+      </div>
+      <% @invoices.each do |invoice| %>
+        <div class="user-card user-empty">
+          <img src="https://source.unsplash.com/900x900/?white" class="avatar-large avatar-empty " />
+          <div class="notification-content ">
+            <%= link_to "Invoice.01", invoice_path(invoice) %>
+          </div>
+        </div>
+      <% end %>
+
+
+  </div>
+</div>

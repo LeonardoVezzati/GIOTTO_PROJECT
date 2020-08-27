@@ -1,26 +1,26 @@
 class PackagesController < ApplicationController
   before_action :set_user, onlyly: [:new, :create]
 
-    def new
+  def new
     @package = Package.new
-    create
   end
 
   def create
     @package = Package.new(params_package)
     @booking = current_user.bookings.find_by(status: "pending")
     @package.booking = @booking
-    @package.save
-    if @package.save!
+    @package.user = current_user
+    @furniture = @package.furniture
+    if @package.save
       # notifiction "added to your packages
       redirect_to furnitures_path
     else
-
+      render 'furnitures/show'
     end
   end
 
   def index
-    @current_user_packages = current_user.bookings.map{|b| b.packages }.flatten
+    @current_user_packages = current_user.packages.where(booking_id: nil) 
   end
 
   def destroy
