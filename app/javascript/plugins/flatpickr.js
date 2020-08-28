@@ -18,7 +18,7 @@ let booked_dates = JSON.parse(document.querySelector('#booking-dates').dataset.d
 flatpickr(".time", {
     enableTime: true,
     noCalendar: true,
-    dateFormat: "d-m-Y H:i",
+    dateFormat: "H:i",
     disable: booked_dates
 }
 );
