@@ -20,7 +20,8 @@ class PackagesController < ApplicationController
   end
 
   def index
-    @current_user_packages = current_user.packages.where(booking_id: nil) 
+    @booking = current_user.bookings.find_by(status: "pending")
+    @packages = current_user.packages.where(booking: @booking)
   end
 
   def destroy

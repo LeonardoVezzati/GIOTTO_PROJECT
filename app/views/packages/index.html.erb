@@ -13,7 +13,7 @@
           <div class="card-body top-card ">
             <p>Tot / month:</p>
             <% @total = 0 %>
-            <% @current_user_packages.each do |package| %>
+            <% @packages.each do |package| %>
             <% @total += package.furniture.price / 5  %>
             <% end %>
             <h2 class="furniture-title item-product index-title ">
@@ -22,11 +22,11 @@
           </div>
         </div>
 
-           <div class="card card-index-info align-items-center ">
+        <div class="card card-index-info align-items-center ">
           <div class="card-body top-card">
             <p>Available budget:</p>
             <% @total = 0 %>
-            <% @current_user_packages.each do |package| %>
+            <% @packages.each do |package| %>
             <% @total += package.furniture.price / 5  %>
             <% end %>
             <h2 class="furniture-title item-product index-title">
@@ -35,11 +35,11 @@
           </div>
         </div>
 
-           <div class="card card-index-info align-items-center" >
+        <div class="card card-index-info align-items-center" >
           <div class="card-body top-card">
             <p>Rental lemght:</p>
             <% @total = 0 %>
-            <% @current_user_packages.each do |package| %>
+            <% @packages.each do |package| %>
             <% @total += package.furniture.price / 5  %>
             <% end %>
             <h2 class="furniture-title item-product index-title">
@@ -61,9 +61,11 @@
       </div>
 
   <div class="flex-row d-flex justify-content-around">
+
   <% @current_user_packages.each do |package| %>
     <div class="card item-card card-item packages-card" style="max-width: 14rem;">
     <div class="card-img-top"> <%= cl_image_tag package.furniture.photo, width: 266, height: 266, crop: :fit %> </div>
+
       <div class="card-body">
         <h5 class="card-title card-status"><%= package.booking.status.capitalize %></h5>
         <h5 class="card-title card-name-furniture"><%= package.furniture.name %></h5>

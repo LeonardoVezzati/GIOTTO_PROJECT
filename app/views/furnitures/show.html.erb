@@ -1,18 +1,21 @@
 <%= render 'shared/lateral_menu' %>
 <div class='index-list'>
   <div class='card-show'>
-    <%= cl_image_tag @furniture.photo, width: 266, height: 266, crop: :fit %>
+    <div class= col-5>
     <ul>
       <li><%= @furniture.name %></li>
       <li><%= @furniture.description %></li>
       <li><%= @furniture.price %></li>
       <li><%= @furniture.category %></li>
-          <%= simple_form_for @package do |f| %>
+        <%= simple_form_for @package do |f| %>
         <%= f.input :furniture_id, as: :hidden, input_html: { value: params[:id] } %>
         <%= f.input :number %>
         <%= f.submit %>
       <% end %>
     </ul>
-   
+    </div>
+    <div class= col-7>
+    <%= cl_image_tag @furniture.photo, width: 266, height: 266, crop: :fit %>
+   </div>
   </div>
 </div>
