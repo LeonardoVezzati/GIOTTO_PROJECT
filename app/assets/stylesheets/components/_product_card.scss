@@ -5,6 +5,7 @@
     margin-right: 0px;
     padding-bottom: 80px;
     width: 100%;
+    min-height: 560px;
     max-height: 600px;
     position: relative;
     display: flex;
@@ -16,12 +17,11 @@
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 2px;
     align-items: center;
-
     ul {
-    margin-top: 16px;
-    list-style: none;
-    padding: 0;
-    text-align: center;
+      margin-top: 16px;
+      list-style: none;
+      padding: 0;
+      text-align: center;
     }
     img {
       padding: 40px;
@@ -36,11 +36,6 @@
       font-weight: lighter;
       font-size: 16px;
     }
-
-    img {
-      padding: 40px;
-      padding-top: 80px;
-    }
     .product-title {
       font-weight: bold;
       font-size: 24px;
@@ -49,10 +44,11 @@
       padding-top: 16px;
       font-weight: lighter;
       font-size: 16px;
-    }
-    
+    }  
 }
 
 .hover :hover {
   background-color: #FAF0E1;
 }
+
+

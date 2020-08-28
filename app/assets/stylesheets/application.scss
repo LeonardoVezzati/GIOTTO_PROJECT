@@ -12,7 +12,7 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/bookings";
-
+@import "pages/furniture_show";
 
 
 .row-container {
@@ -22,7 +22,6 @@
   margin-right: 16px;
   width: 24px;
 }
-
 
 .furniture-index-container {
   width: 100%;
@@ -74,7 +73,6 @@
   padding: 0;
 }
 
-
 .filter {
   padding-right: 35px;
   font-size: 22px;
@@ -85,7 +83,6 @@
 
 .container-filter {
  text-align: center;
-
 }
 
 .filter span {
