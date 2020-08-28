@@ -10,11 +10,11 @@ Furniture.destroy_all
 
 
 
-#team = Team.create(
-#  company: "Giotto",
-#  rental_period: 9,
-#  budget: 600,
-#)
+team = Team.create(
+company: "Giotto",
+rental_period: 9,
+budget: 600,
+)
 
 
 
