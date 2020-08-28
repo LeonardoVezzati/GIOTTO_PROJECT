@@ -67,38 +67,40 @@
     <div class="card-img-top"> <%= cl_image_tag package.furniture.photo, width: 266, height: 266, crop: :fit %> </div>
 
       <div class="card-body">
-        <h5 class="card-title card-status"><%= package.booking.status.capitalize %></h5>
+        <h5 class="card-title card-status">
+          <% if package.booking == nil  %>
+            <span class="pending"> <h2>Pending</h2> </span>
+            <% else %>
+          <%= package.booking.status.capitalize %>
+          <% end %>
+          </h5>
         <h5 class="card-title card-name-furniture"><%= package.furniture.name %></h5>
         <% @divide = 0 %>
         <% if @current_user.team.rental_period == 1 %>
              <% @divide = 0.20 %>
               <% elsif @current_user.team.rental_period == 2 %>
-                <% @divide = 0.1250 %>
+                <% @divide = 0.125 %>
               <% elsif @current_user.team.rental_period == 3 %>
-                <% @divide = 0.933 %>
+                <% @divide = 0.0933 %>
               <% elsif @current_user.team.rental_period == 4 %>
-                <% @divide = 0.775 %>
+                <% @divide = 0.0775 %>
               <% elsif @current_user.team.rental_period == 5 %>
-                <% @divide = 0.68 %>
+                <% @divide = 0.068 %>
               <% elsif @current_user.team.rental_period == 6 %>
-                <% @divide = 0.6 %>
+                <% @divide = 0.06 %>
               <% elsif @current_user.team.rental_period == 7 %>
-                <% @divide = 0.543 %>
+                <% @divide = 0.0543 %>
               <% elsif @current_user.team.rental_period == 8 %>
-                <% @divide = 0.513 %>
+                <% @divide = 0.0513 %>
               <% elsif @current_user.team.rental_period == 9 %>
-                <% @divide = 0.489 %>
+                <% @divide = 0.0489 %>
               <% elsif @current_user.team.rental_period == 10 %>
-                <% @divide = 0.47 %>
+                <% @divide = 0.047 %>
               <% elsif @current_user.team.rental_period == 11 %>
-                <% @divide = 0.445 %>
+                <% @divide = 0.0445 %>
               <% else %>
-                <% @divide = 0.417 %>
+                <% @divide = 0.0417 %>
              <% end %>
-
-
-
-
         <p class="card-text card-price"><%= package.furniture.retail_price * @divide %>$ / month</p>
         <p class="card-text">Delivery date: <span class="pending">pending</span>  </p>
         <p class="card-text">Expiry date: <span class="pending">pending</span> </p>
@@ -113,11 +115,11 @@
     </div>
   <% end %>
 
-    <div class="card item-card card-item" style="max-width: 17rem;">
+    <div class="card item-card card-item" style="max-width: 14rem; min-width: 13rem;">
 
       <div class="card-body">
-        <div class="">
-          <%= link_to "+", furnitures_path %>
+        <div class="add-item">
+          <%= link_to "Add an item", furnitures_path %>
         </div>
       </div>
     </div>
