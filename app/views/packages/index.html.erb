@@ -106,10 +106,7 @@
         <p class="card-text">Expiry date: <span class="pending">pending</span> </p>
         <p class="card-text">Rental plan: <%= @current_user.team.rental_period %>months</p>
         <div class="delete-button">
-          <%= link_to "x",
-                      package_path(package),
-                      method: :delete,
-                      data: { confirm: "Are you sure ?" } %>
+          <%= link_to "x", package_path(package), method: :delete, data: { confirm: "Are you sure ?" } %>
         </div>
       </div>
     </div>

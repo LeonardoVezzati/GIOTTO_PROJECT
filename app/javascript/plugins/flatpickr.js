@@ -1,5 +1,6 @@
 import flatpickr from "flatpickr";
-
+const initFlatpicker = () => {
+if(document.querySelector(".datepicker")){
 flatpickr(".datepicker", {
   altInput: true,
   minDate: new Date().fp_incr(10),
@@ -22,8 +23,8 @@ flatpickr(".time", {
     disable: booked_dates
 }
 );
+}
+} 
 
-console.log(booked_dates)
-
-
+export { initFlatpicker }
 

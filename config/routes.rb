@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :furnitures, only: [:index, :show]
   resources :bookings
   resources :invoices
-  resources :packages
+  resources :packages, only: [:index, :create, :destroy, :new]
   resources :teams do
     collection do
       get "team_packages", to: "teams#packages"
