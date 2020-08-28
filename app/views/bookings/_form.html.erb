@@ -2,17 +2,22 @@
   <%= render 'shared/lateral_menu' %>
   <div class= "index-list ">
 
-      <h2>Your're only a few steps away from your dream office!</h2>
-      <h2>Rent it now!</h2>
-      <%=simple_form_for [@booking] do |f|%>
-          <%= f.input :delivery_date, start_year: Date.today.year %>
-          <%= f.input :delivery_time %>
+    <div class="container">
+      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+        <h2>Your're only a few steps away from your dream office!</h2>
+        <h2>Rent it now!</h2>
+
+        <%=simple_form_for [@booking] do |f|%>
+          <%= f.input :delivery_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :delivery_time, as: :string, required: false, input_html: {class: "time"} %>
+          <div id="booking-dates" data-dates="<%=Booking.all.map{|booking|"#{booking.delivery_date.strftime("%d-%m-%Y")} #{booking.delivery_time.strftime("%H:%M")}"}.to_json%>"></div>
           <%= f.input :delivery_address %>
           <%= f.input :floor %>
           <%= f.input :building_elevator %>
           <%= f.input :external_elevator %>
           <%=f.submit "Confirm", class: "btn btn-primary my-3" %>
       <%end %>
-
+      </div>
+    </div>
   </div>
 </div>
