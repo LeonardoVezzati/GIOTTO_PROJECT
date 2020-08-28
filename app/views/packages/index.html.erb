@@ -62,9 +62,9 @@
 
   <div class="flex-row d-flex justify-content-around">
 
-  <% @current_user_packages.each do |package| %>
+  <% @packages.each do |package| %>
     <div class="card item-card card-item packages-card" style="max-width: 14rem;">
-    <div class="card-img-top"> <%= cl_image_tag package.furniture.photo, width: 266, height: 266, crop: :fit %> </div>
+    <div class="card-img-top"> <%= cl_image_tag package.furniture.photo, width: 100, height: 266, crop: :fit %> </div>
 
       <div class="card-body">
         <h5 class="card-title card-status">
@@ -76,32 +76,32 @@
           </h5>
         <h5 class="card-title card-name-furniture"><%= package.furniture.name %></h5>
         <% @divide = 0 %>
-        <% if @current_user.team.rental_period == 1 %>
+        <% if current_user.team.rental_period == 1 %>
              <% @divide = 0.20 %>
-              <% elsif @current_user.team.rental_period == 2 %>
+              <% elsif current_user.team.rental_period == 2 %>
                 <% @divide = 0.125 %>
-              <% elsif @current_user.team.rental_period == 3 %>
+              <% elsif current_user.team.rental_period == 3 %>
                 <% @divide = 0.0933 %>
-              <% elsif @current_user.team.rental_period == 4 %>
+              <% elsif current_user.team.rental_period == 4 %>
                 <% @divide = 0.0775 %>
-              <% elsif @current_user.team.rental_period == 5 %>
+              <% elsif current_user.team.rental_period == 5 %>
                 <% @divide = 0.068 %>
-              <% elsif @current_user.team.rental_period == 6 %>
+              <% elsif current_user.team.rental_period == 6 %>
                 <% @divide = 0.06 %>
-              <% elsif @current_user.team.rental_period == 7 %>
+              <% elsif current_user.team.rental_period == 7 %>
                 <% @divide = 0.0543 %>
-              <% elsif @current_user.team.rental_period == 8 %>
+              <% elsif current_user.team.rental_period == 8 %>
                 <% @divide = 0.0513 %>
-              <% elsif @current_user.team.rental_period == 9 %>
+              <% elsif current_user.team.rental_period == 9 %>
                 <% @divide = 0.0489 %>
-              <% elsif @current_user.team.rental_period == 10 %>
+              <% elsif current_user.team.rental_period == 10 %>
                 <% @divide = 0.047 %>
-              <% elsif @current_user.team.rental_period == 11 %>
+              <% elsif current_user.team.rental_period == 11 %>
                 <% @divide = 0.0445 %>
               <% else %>
                 <% @divide = 0.0417 %>
              <% end %>
-        <p class="card-text card-price"><%= package.furniture.retail_price * @divide %>$ / month</p>
+        <p class="card-text card-price"><%= package.furniture.price * @divide %>$ / month</p>
         <p class="card-text">Delivery date: <span class="pending">pending</span>  </p>
         <p class="card-text">Expiry date: <span class="pending">pending</span> </p>
         <p class="card-text">Rental plan: <%= @current_user.team.rental_period %>months</p>
