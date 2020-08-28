@@ -13,7 +13,7 @@
           <div class="card-body top-card ">
             <p>Tot / month:</p>
             <% @total = 0 %>
-            <% @current_user_packages.each do |package| %>
+            <% @packages.each do |package| %>
             <% @total += package.furniture.price / 5  %>
             <% end %>
             <h2 class="furniture-title item-product index-title ">
@@ -22,11 +22,11 @@
           </div>
         </div>
 
-           <div class="card card-index-info align-items-center ">
+        <div class="card card-index-info align-items-center ">
           <div class="card-body top-card">
             <p>Available budget:</p>
             <% @total = 0 %>
-            <% @current_user_packages.each do |package| %>
+            <% @packages.each do |package| %>
             <% @total += package.furniture.price / 5  %>
             <% end %>
             <h2 class="furniture-title item-product index-title">
@@ -35,11 +35,11 @@
           </div>
         </div>
 
-           <div class="card card-index-info align-items-center" >
+        <div class="card card-index-info align-items-center" >
           <div class="card-body top-card">
             <p>Rental lemght:</p>
             <% @total = 0 %>
-            <% @current_user_packages.each do |package| %>
+            <% @packages.each do |package| %>
             <% @total += package.furniture.price / 5  %>
             <% end %>
             <h2 class="furniture-title item-product index-title">
@@ -62,7 +62,9 @@
 
 
   <div class="flex-row d-flex justify-content-around">
-  <% @current_user_packages.each do |package| %>
+
+  <% @packages.each do |package| %>
+
     <div class="card item-card card-item" style="max-width: 17rem;">
       <img class="card-img-top" src="https://source.unsplash.com/1600x900/?furniture,desk
     " alt="Card image cap">
