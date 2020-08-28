@@ -98,8 +98,8 @@
 
 
         <p class="card-text card-price"><%= package.furniture.retail_price * @divide %>$ / month</p>
-        <p class="card-text">Delivery date: pending </p>
-        <p class="card-text">Expiry date: pending </p>
+        <p class="card-text">Delivery date: <span class="pending">pending</span>  </p>
+        <p class="card-text">Expiry date: <span class="pending">pending</span> </p>
         <p class="card-text">Rental plan: <%= @current_user.team.rental_period %>months</p>
         <div class="delete-button">
           <%= link_to "x",
