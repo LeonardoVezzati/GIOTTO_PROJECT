@@ -1,5 +1,5 @@
 class PackagesController < ApplicationController
-  before_action :set_user, onlyly: [:new, :create]
+  before_action :set_user, only: [:new, :create]
 
   def new
     @package = Package.new
