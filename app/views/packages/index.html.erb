@@ -58,6 +58,7 @@
             <% @packages.each do |package| %>
               <h2><% @total += (((package.furniture.price_cents * @divide) * package.number)/100).ceil %></h2>
             <% end %>
+            
               <h2>€<%= @total%></h2>
           </div>
         </div>
@@ -78,6 +79,8 @@
         <h3>Your 1st package</h3>
         <%= link_to "Plan my delivery", new_booking_path, class: 'btn btn-primary btn-delivery' %>
       </div>
+
+
 
       <div class="row">
         <div class= col-4>
@@ -143,6 +146,7 @@
               </div>
         </div>
             <% end %>
+
       </div>
  </div>
 </div>
