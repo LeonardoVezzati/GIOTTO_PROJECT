@@ -56,9 +56,10 @@
                 <% @divide = 0.0417 %>
               <% end %>
             <% @packages.each do |package| %>
-              <h2>€<%= @total += (((package.furniture.price_cents * @divide) * package.number)/100).ceil %></h2>
+              <h2><% @total += (((package.furniture.price_cents * @divide) * package.number)/100).ceil %></h2>
             <% end %>
-
+            
+              <h2>€<%= @total%></h2>
           </div>
         </div>
       </div>
@@ -67,9 +68,8 @@
           <div class="top-box-info-packages">
             <p>Available budget (€):</p>
             <% @budget = 100 %>
-            <% @packages.each do |package| %>
-            `<h2>€<%= @budget - @total %></h2>
-            <% end %>
+            <h2>€<%= @budget - @total %></h2>
+
           </div>
         </div>
       </div>
