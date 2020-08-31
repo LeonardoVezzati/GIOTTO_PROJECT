@@ -1,9 +1,20 @@
-<h2>Sign up</h2>
+<div class= "row">
+<div class = col-6 >
+  <div class= "login-framework" >
+    <%= image_tag 'Sign-in-1'%>
+  </div>
+</div>
+<div class = col-6>
+<div class=col-1>
+</div>
+<div class=col-10>
+<div class="form_container">
+<h2 class= "sign-up-text">Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs form-text">
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -23,3 +34,11 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
+<div class=col-1>
+</div>
+</div>
+
+
+</div>
