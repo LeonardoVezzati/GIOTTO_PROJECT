@@ -8,8 +8,35 @@
     <div class= col-6>
     <ul class= "product-show-list">
       <li class="product-show-list-title"><%= @furniture.name %></li>
-      <li class="product-show-list-price"><%= @furniture.price %></li>
-      <li class="product-show-list-rentalprice">from <%= @furniture.price%>/month</li>
+      <% @total = 0 %>
+      <% @divide = 0 %>
+      <% if current_user.team.rental_period == 1 %>
+        <% @divide = 0.20 %>
+      <% elsif current_user.team.rental_period == 2 %>
+        <% @divide = 0.125 %>
+      <% elsif current_user.team.rental_period == 3 %>
+        <% @divide = 0.0933 %>
+      <% elsif current_user.team.rental_period == 4 %>
+        <% @divide = 0.0775 %>
+      <% elsif current_user.team.rental_period == 5 %>
+        <% @divide = 0.068 %>
+      <% elsif current_user.team.rental_period == 6 %>
+        <% @divide = 0.06 %>
+      <% elsif current_user.team.rental_period == 7 %>
+        <% @divide = 0.0543 %>
+      <% elsif current_user.team.rental_period == 8 %>
+        <% @divide = 0.0513 %>
+      <% elsif current_user.team.rental_period == 9 %>
+        <% @divide = 0.0489 %>
+      <% elsif current_user.team.rental_period == 10 %>
+        <% @divide = 0.047 %>
+      <% elsif current_user.team.rental_period == 11 %>
+        <% @divide = 0.0445 %>
+      <% else %>
+        <% @divide = 0.0417 %>
+      <% end %>
+      <li class="product-show-list-rentalprice">€<%= @furniture.price * @divide %>  /month</li>
+      <li class="product-show-list-price">Original retail price: €<%= @furniture.price %></li>
       <li class="product-show-list-description"><%= @furniture.description %></li>
         <%= simple_form_for @package do |f| %>
         <%= f.input :furniture_id, as: :hidden, input_html: { value: params[:id] } %>
