@@ -38,7 +38,7 @@
           </div>
         </div>
 
-        
+
         <div class="col-3">
           <div class="top-box-packages align-items-center" >
             <div class="top-box-info-packages">
@@ -60,7 +60,7 @@
       </div>
 
       <div class="flex-item ">
-        <div class="user-card-teams">  
+        <div class="user-card-teams">
           <%= image_tag "Review-1" %>
         <div class="notification-content ">
           <h3 class=""> <%= link_to "Add new user", new_user_invitation_path(params: { team_id:  current_user.team_id }) %></h3>
@@ -73,11 +73,16 @@
           <img src="https://source.unsplash.com/900x900/?face,people" class="avatar-large avatat-pos" />
           <div class="notification-content">
             <p><small><%= user.email %></small></p>
-            <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+            <p><small style="color:black;"><%= user.firstname %> <%= user.lastname %> </small></p>
           </div>
           <div class="notification-actions">
+            <p><small><%= user.budget_per_month %>$/month</small></p>
             <% @user_id = user.id %>
+            <% if team_packages_teams_path(params: { user_id: user.id }) == nil  %>
+            <h2>noooo</h2>
+            <% else %>
             <a class=""> <%= link_to "Profil", team_packages_teams_path(params: { user_id: user.id }) %></a>
+          <% end %>
           </div>
         </div>
       <% end %>
@@ -104,13 +109,16 @@
 
       <% @current_user_team.each do |user| %>
         <% next if user == current_user %>
-        <div class="user-card-teams">  
+        <div class="user-card-teams">
           <%= image_tag "Review-1" %>
           <div class="notification-content">
             <p><small><%= user.email %></small></p>
-            <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
-          </div>
+            <p><small><%= user.firstname %> <%= user.lastname %> </small></p>
+
+         </div>
           <div class="notification-actions">
+            <p><small><%= user.budget_per_month %>$/month</small></p>
+
             <% @user_id = user.id %>
             <a class=""> <%= link_to "Profil", team_packages_teams_path(params: { user_id: user.id }) %></a>
           </div>
