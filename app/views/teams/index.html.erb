@@ -31,6 +31,41 @@
       <% end %>
 
     </div>
+    
+
+    <div>
+    
+      <div class= 12-col>
+      <div class="flex-item ">
+        <div class="package_title">
+          <h3>Your Team:</h3>
+          </div>
+        </div>
+        <div class="user-card-teams">
+          <div class="button-add-employee">
+            <h2><%= link_to "+", new_user_invitation_path(params: { team_id:  current_user.team_id }) %></h2>
+          </div>
+        <div class="notification-content ">
+          <h3 class=""> <%= link_to "Add new user", new_user_invitation_path(params: { team_id:  current_user.team_id }) %></h3>
+        </div>
+      </div>
+    
+      <% @current_user_team.each do |user| %>
+        <% next if user == current_user %>
+        <div class="user-card">
+          <img src="https://source.unsplash.com/900x900/?face,people" class="button-add-employee" />
+          <div class="notification-content">
+            <p><small><%= user.email %></small></p>
+            <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+          </div>
+          <div class="notification-actions">
+            <% @user_id = user.id %>
+            <a class=""> <%= link_to "Profil", team_packages_teams_path(params: { user_id: user.id }) %></a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    </div>
   </div>
 
 

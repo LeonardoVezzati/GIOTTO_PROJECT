@@ -1,25 +1,28 @@
 <%= render 'shared/lateral_menu' %>
 <div class='index-list'>
+
+  <div style= "margin-top: 40px">
+    <%= link_to "Return to furniture", furnitures_path, class: 'btn btn-primary btn-delivery'%>
+  </div>
   <div class='card-show'>
     <div class= col-6>
     <ul class= "product-show-list">
-      <li><%= @furniture.name %></li>
-      <li><%= @furniture.price %></li>
-      <li>from <%= @furniture.price%>/month</li>
-      <li><%= @furniture.description %></li>
-      <li><%= @furniture.category %></li>
+      <li class="product-show-list-title"><%= @furniture.name %></li>
+      <li class="product-show-list-price"><%= @furniture.price %></li>
+      <li class="product-show-list-rentalprice">from <%= @furniture.price%>/month</li>
+      <li class="product-show-list-description"><%= @furniture.description %></li>
         <%= simple_form_for @package do |f| %>
         <%= f.input :furniture_id, as: :hidden, input_html: { value: params[:id] } %>
         <%= f.input :number %>
-        <%= f.submit %>
+        <div class= "submit-button-hover">
+        <%= f.submit "Add to my package", class: "product-show-list-submit-button" %>
+        </div>
       <% end %>
     </ul>
     </div>
     <div class= col-6>
-    <div style= "background-color: #FFFBF5">
     <div class="product-show-image">
       <%= cl_image_tag @furniture.photo, width: 400, height: 400, crop: :fit %>
-    </div>
     </div>
    </div>
   </div>

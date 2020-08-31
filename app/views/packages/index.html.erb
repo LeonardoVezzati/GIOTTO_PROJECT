@@ -2,11 +2,11 @@
   <%= render 'shared/lateral_menu' %>
   <div class= "index-list ">
 
-    <div class="flex-item ">
-      <div class="flex-row d-flex justify-content-around">
+    <div class="row">
           
-        <div class="card card-index-info align-items-center " >
-          <div class="card-body top-card ">
+      <div class="col-4">
+        <div class="top-box-packages align-items-center" >
+          <div class="top-box-info-packages">
             <p>Tot / month:</p>
             <% @total = 0 %>
             <% @packages.each do |package| %>
@@ -15,9 +15,11 @@
             <h2 class="furniture-title item-product index-title "><%= @total %></h2>
           </div>
         </div>
+      </div>
 
-        <div class="card card-index-info align-items-center ">
-          <div class="card-body top-card">
+      <div class="col-4">
+        <div class="top-box-packages align-items-center">
+          <div class="top-box-info-packages">
             <p>Available budget:</p>
             <% @total = 0 %>
             <% @packages.each do |package| %>
@@ -26,10 +28,12 @@
             <h2 class="furniture-title item-product index-title"><%= @total %></h2>
           </div>
         </div>
-
-        <div class="card card-index-info align-items-center" >
-          <div class="card-body top-card">
-            <p>Rental lemght:</p>
+      </div>
+      
+      <div class="col-4">
+        <div class="top-box-packages align-items-center" >
+          <div class="top-box-info-packages">
+            <p>Rental lenght:</p>
             <% @total = 0 %>
             <% @packages.each do |package| %>
               <% @total += package.furniture.price / 5  %>
@@ -37,6 +41,7 @@
             <h2 class="furniture-title item-product index-title"><%= @total %></h2>
           </div>
         </div>
+      </div>
         
       </div>
 
