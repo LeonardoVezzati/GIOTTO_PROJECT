@@ -104,3 +104,50 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+
+
+
+
+.user-card-teams {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid rgb(220,220,220);
+  box-shadow: 2px 2px 16px 1px rgba(200, 200, 200, 0.1);
+  position: relative;
+  width: calc(100%-5%);
+  height: 200px;
+  margin-top: 40px;
+  margin-left: 7%;
+  h3 {
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+.button-add-employee {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  border-radius: 50%;
+  left: 0px;
+  top: 0px;
+  margin-top: 0;
+  transform: translate(-50%, 0%);
+  background: #FFFBF5;
+  height: 100%;
+  text-align: center;
+  border: 1px solid rgb(220,220,220);
+  box-shadow: 2px 2px 16px 1px rgba(200, 200, 200, 0.1);
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    font-size: 48px; 
+  }
+}
+
+.button-add-employee-hover :hover {
+  background-color: #FAF0E1;
+}

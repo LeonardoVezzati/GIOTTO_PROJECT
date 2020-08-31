@@ -1,3 +1,63 @@
+.card-show {
+  display: flex;
+  box-shadow: 2px 2px 16px 1px rgba(120, 120, 120, 0.1);
+  margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: #FFFBF5;
+  border: solid 1px rgb(220, 220, 220);
+}
+
+
 .product-show-image {
+  padding-top: 5%;
   text-align: center;
 }
+
+.product-show-list {
+  list-style: none;
+  padding: 10%;
+}
+
+.product-show-list-title {
+  font-size: 32px;
+  font-weight: bold;
+  padding-bottom: 5%;
+}
+
+.product-show-list-price {
+  font-size: 20px;
+  color: grey;
+  text-decoration: line-through;
+}
+
+.product-show-list-rentalprice {
+  font-size: 24px;
+  padding-bottom: 5%;
+  border-bottom: solid 1px grey;
+}
+
+.product-show-list-description {
+  font-size: 18px;
+  text-align: justify;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-weight: lighter;
+}
+
+.product-show-list-submit-button {
+  margin-top: 5%;
+  width: 100%;
+  font-size: 24px;
+  padding: 5%;
+  background-color: white;
+  color: #2B313D;
+  border: solid 2px #2B313D;
+  box-shadow: 2px 2px 16px 1px rgba(200, 200, 200, 0.1);
+  transition: 0.2s;
+}
+
+.submit-button-hover :hover {
+  background-color: #2B313D;
+  color: white;    
+}
+

@@ -48,7 +48,12 @@
 }
 
 .hover :hover {
+  transform: scale(1.01);
   background-color: #FAF0E1;
+
+  img {
+    transform: scale(1);
+  }
 }
 
 
