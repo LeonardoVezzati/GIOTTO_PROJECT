@@ -3,17 +3,28 @@
     <div class= "index-list ">
 
 
+
       <div class="row">
-          
+
         <div class="col-4">
+              <% if current_user.status == "manager" %>
           <div class="top-box-packages-rental align-items-center" >
             <div class="top-box-info-packages">
               <%=  simple_form_for @team do |f| %>
                 <%= f.input :rental_period, input_html:{min:0, max:24} %>
                 <%= f.submit%>
               <% end %>
-            </div>
+              </div>
           </div>
+              <% else %>
+                <div class="top-box-packages-rental align-items-center" >
+                  <div class="top-box-info-packages">
+                    <p>Rental period:</p>
+                    <h2><%= current_user.team.rental_period %>  months</h2>
+                  </div>
+              </div>
+              <% end %>
+
         </div>
 
         <div class="col-4">
@@ -21,12 +32,12 @@
             <div class="top-box-info-packages">
               <p>Available budget:</p>
               <% @total = 0 %>
-              
+
               <h2 class="furniture-title item-product index-title"><%= @total %></h2>
             </div>
           </div>
         </div>
-        
+
         <div class="col-4">
           <div class="top-box-packages align-items-center" >
             <div class="top-box-info-packages">
@@ -35,7 +46,7 @@
             </div>
           </div>
         </div>
-          
+
       </div>
 
       <div class="flex-item ">
@@ -67,10 +78,10 @@
       <% end %>
 
     </div>
-    
+
 
     <div>
-    
+
       <div class= 12-col>
       <div class="flex-item ">
         <div class="package_title">
@@ -85,7 +96,7 @@
           <h3 class=""> <%= link_to "Add new user", new_user_invitation_path(params: { team_id:  current_user.team_id }) %></h3>
         </div>
       </div>
-    
+
       <% @current_user_team.each do |user| %>
         <% next if user == current_user %>
         <div class="user-card">
