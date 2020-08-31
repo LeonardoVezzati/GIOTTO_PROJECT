@@ -20,11 +20,13 @@ flatpickr(".time", {
     enableTime: true,
     noCalendar: true,
     dateFormat: "H:i",
+    minTime: "8:00",
+    maxTime: "20:00",
     disable: booked_dates
 }
 );
 }
-} 
+}
 
 export { initFlatpicker }
 
