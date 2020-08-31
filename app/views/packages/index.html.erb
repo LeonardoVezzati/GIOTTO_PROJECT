@@ -4,7 +4,6 @@
   <div class= "index-list ">
 
     <div class="row">
-          
       <div class="col-4">
         <div class="top-box-packages-rental align-items-center" >
           <div class="top-box-info-packages">
@@ -13,7 +12,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-4">
         <div class="top-box-packages align-items-center">
           <div class="top-box-info-packages">
@@ -26,7 +24,6 @@
           </div>
         </div>
       </div>
-      
       <div class="col-4">
         <div class="top-box-packages align-items-center" >
           <div class="top-box-info-packages">
@@ -65,8 +62,7 @@
           </div>
         </div>
       </div>
-        
-      </div>
+    </div>
 
       <div class="package_title flex-row d-flex justify-content-between align-items-center">
         <h3>Your 1st package</h3>
@@ -75,19 +71,19 @@
 
       <div class="row">
         <div class= col-4>
-          <div class= "product-card-packages">  
+          <div class= "product-card-packages">
             <%= link_to "+", furnitures_path %>
           </div>
         </div>
-        
-        <div class= col-4>
+
             <% @packages.each do |package| %>
+        <div class= col-4>
               <div class="card-packages-product packages-card">
-                  
-                <div class="card-packages-image"> 
-                  <%= cl_image_tag package.furniture.photo, width: 266, height: 266, crop: :fit %> 
+
+                <div class="card-packages-image">
+                  <%= cl_image_tag package.furniture.photo, width: 266, height: 266, crop: :fit %>
                 </div>
-                  
+
                 <div class="card-body">
                   <h2 class="card-title card-status">
                   <% if package.booking == nil  %>
@@ -95,6 +91,7 @@
                   <% else %>
                     <%= package.booking.status.capitalize %>
                   <% end %>
+                  </h2>
                   <h3 class="card-title card-name-furniture"><%= package.furniture.name %></h3>
                   <% @divide = 0 %>
                   <% if current_user.team.rental_period == 1 %>
@@ -126,14 +123,14 @@
                   <p class="card-text">Delivery date: <span class="pending">pending</span>  </p>
                   <p class="card-text">Expiry date: <span class="pending">pending</span> </p>
                   <p class="card-text">Rental plan: <%= @current_user.team.rental_period %>months</p>
+
                   <div class="delete-button">
                     <%= link_to "x", package_path(package), method: :delete, data: { confirm: "Are you sure ?" } %>
                   </div>
                 </div>
-          
               </div>
-            <% end %>
         </div>
+            <% end %>
       </div>
-
+ </div>
 </div>
