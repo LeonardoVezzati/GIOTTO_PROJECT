@@ -5,14 +5,10 @@
     <div class="row">
           
       <div class="col-4">
-        <div class="top-box-packages align-items-center" >
+        <div class="top-box-packages-rental align-items-center" >
           <div class="top-box-info-packages">
-            <p>Tot / month:</p>
-            <% @total = 0 %>
-            <% @packages.each do |package| %>
-              <% @total += package.furniture.price / 5  %>
-            <% end %>
-            <h2 class="furniture-title item-product index-title "><%= @total %></h2>
+            <p>Rental period:</p>
+            <h2><%= current_user.team.rental_period %>  months</h2>
           </div>
         </div>
       </div>
@@ -33,12 +29,38 @@
       <div class="col-4">
         <div class="top-box-packages align-items-center" >
           <div class="top-box-info-packages">
-            <p>Rental lenght:</p>
+           <p>Tot / month:</p>
             <% @total = 0 %>
+            <% @divide = 0 %>
+              <% if current_user.team.rental_period == 1 %>
+                <% @divide = 0.20 %>
+              <% elsif current_user.team.rental_period == 2 %>
+                <% @divide = 0.125 %>
+              <% elsif current_user.team.rental_period == 3 %>
+                <% @divide = 0.0933 %>
+              <% elsif current_user.team.rental_period == 4 %>
+                <% @divide = 0.0775 %>
+              <% elsif current_user.team.rental_period == 5 %>
+                <% @divide = 0.068 %>
+              <% elsif current_user.team.rental_period == 6 %>
+                <% @divide = 0.06 %>
+              <% elsif current_user.team.rental_period == 7 %>
+                <% @divide = 0.0543 %>
+              <% elsif current_user.team.rental_period == 8 %>
+                <% @divide = 0.0513 %>
+              <% elsif current_user.team.rental_period == 9 %>
+                <% @divide = 0.0489 %>
+              <% elsif current_user.team.rental_period == 10 %>
+                <% @divide = 0.047 %>
+              <% elsif current_user.team.rental_period == 11 %>
+                <% @divide = 0.0445 %>
+              <% else %>
+                <% @divide = 0.0417 %>
+              <% end %>
             <% @packages.each do |package| %>
-              <% @total += package.furniture.price / 5  %>
+              <h2><% @total += package.furniture.price * @divide %></h2>
             <% end %>
-            <h2 class="furniture-title item-product index-title"><%= @total %></h2>
+            <h2 class="furniture-title item-product index-title "><%= @total %></h2>
           </div>
         </div>
       </div>
