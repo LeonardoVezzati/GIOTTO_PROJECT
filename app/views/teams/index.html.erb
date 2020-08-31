@@ -27,18 +27,28 @@
 
         </div>
 
-        <div class="col-4">
+        <div class="col-3">
           <div class="top-box-packages align-items-center">
             <div class="top-box-info-packages">
-              <p>Available budget:</p>
-              <% @total = 0 %>
 
-              <h2 class="furniture-title item-product index-title"><%= @total %></h2>
+              <p>N. of team members:</p>
+              <%= @total_members %>
+                     <h2 class="furniture-title item-product index-title"><%= @total %></h2>
             </div>
           </div>
         </div>
 
-        <div class="col-4">
+        
+        <div class="col-3">
+          <div class="top-box-packages align-items-center" >
+            <div class="top-box-info-packages">
+              <p>Tot/month:</p>
+              <% @total = 0 %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
           <div class="top-box-packages align-items-center" >
             <div class="top-box-info-packages">
               <p>Tot/month:</p>
@@ -50,13 +60,8 @@
       </div>
 
       <div class="flex-item ">
-        <div class="package_title">
-          <h3>Your Team:</h3>
-          <div class="separator">
-          </div>
-        </div>
-        <div class="user-card user-empty">
-          <img src="https://source.unsplash.com/900x900/?white" class="avatar-large avatar-empty " />
+        <div class="user-card-teams">  
+          <%= image_tag "Review-1" %>
         <div class="notification-content ">
           <h3 class=""> <%= link_to "Add new user", new_user_invitation_path(params: { team_id:  current_user.team_id }) %></h3>
         </div>
@@ -99,8 +104,8 @@
 
       <% @current_user_team.each do |user| %>
         <% next if user == current_user %>
-        <div class="user-card">
-          <img src="https://source.unsplash.com/900x900/?face,people" class="button-add-employee" />
+        <div class="user-card-teams">  
+          <%= image_tag "Review-1" %>
           <div class="notification-content">
             <p><small><%= user.email %></small></p>
             <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
