@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
 
   def index
     @current_user_team = User.all.filter { |user| user.team_id == current_user.team_id }
-
+    @team = current_user.team
   end
 
   def packages
@@ -14,7 +14,20 @@ class TeamsController < ApplicationController
     else
       redirect_to teams_path
       flash[:alert] = 'Sorry, no access to that user.'
+    end
+  
   end
-end
+
+  def update
+    @team = Team.find(params[:id])
+    @team.update(params_team)
+    redirect_to teams_path
+  end
+
+  private
+
+  def params_team
+    params.require(:team).permit(:rental_period)
+  end
 end
 

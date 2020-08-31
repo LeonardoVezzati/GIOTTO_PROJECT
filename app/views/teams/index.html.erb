@@ -2,6 +2,48 @@
     <%= render 'shared/lateral_menu' %>
     <div class= "index-list ">
 
+
+      <div class="row">
+          
+        <div class="col-4">
+          <div class="top-box-packages align-items-center" >
+            <div class="top-box-info-packages">
+              <p>Tot / month:</p>
+              <% @total = 0 %>
+              <%=  simple_form_for @team do |f| %>
+                <%= f.input :rental_period, input_html:{min:0, max:24} %>
+                <%= f.submit%>
+              <% end %>
+              
+              <h2 class="furniture-title item-product index-title "><%= @total %></h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="top-box-packages align-items-center">
+            <div class="top-box-info-packages">
+              <p>Available budget:</p>
+              <% @total = 0 %>
+              
+              <h2 class="furniture-title item-product index-title"><%= @total %></h2>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-4">
+          <div class="top-box-packages align-items-center" >
+            <div class="top-box-info-packages">
+              <p>Rental lenght:</p>
+              <% @total = 0 %>
+              
+              <h2 class="furniture-title item-product index-title"><%= @total %></h2>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+
       <div class="flex-item ">
         <div class="package_title">
           <h3>Your Team:</h3>
