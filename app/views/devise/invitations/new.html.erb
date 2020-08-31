@@ -1,27 +1,22 @@
-<h2><%= t "devise.invitations.new.header" %></h2>
+<div class= "row row-container">
+  <%= render 'shared/lateral_menu' %>
+  <div class= "index-list ">
+    <div class="container" style="padding-top:50px;">
+      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+        <h2>Invite a new user</h2>
+        <%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
+          <%= f.error_notification %>
 
+          <% resource.class.invite_key_fields.each do |field| -%>
+            <div class="form-inputs">
+              <%= f.input :email, placeholder: 'user@domain.com' %>
+              <%= f.input :team_id, as: :hidden, input_html: {value: params[:team_id]} %>
 
-<div class="container container-invitation">
-
-<%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-
-  <% resource.class.invite_key_fields.each do |field| -%>
-    <div class="form-inputs">
-      <%= f.input :email, placeholder: 'user@domain.com' %>
-      <%= f.input :team_id, as: :hidden, input_html: {value: params[:team_id]} %>
-    </div>
-  <% end -%>
-
-
-  <div class="form-actions btn btn-primary btn-lg btn-validation">
-      <%= f.button  :submit, t("devise.invitations.new.submit_button") %>
-      <h3>Send Invite</h3>
-  </div>
-<% end %>
-</div>
-
-
-   <div class="package_title flex-row d-flex justify-content-between align-items-center">
-        <%= link_to "Plan my delivery", new_booking_path, class: 'btn btn-primary btn-delivery' %>
+            </div>
+                 <%=f.submit "Send invite", class: "btn btn-primary btn-create" %>
+          <% end %>
+        <% end %>
       </div>
+    </div>
+  </div>
+</div>
