@@ -1,7 +1,13 @@
+
+
 <div class="navbar-giotto">
   <div class='flex1'>
     <ul class='list-inline-left'>
+       <% if current_user.status == "manager" %>
       <li class='text-list-dashboard'> <%= link_to 'Dashboard', teams_path %></li>
+        <% else%>
+      <li class='text-list-dashboard'> <%= link_to 'Dashboard', packages_path %></li>
+      <% end %>
       <li class='text-list-left'>About us</li>
     </ul>
   </div>
