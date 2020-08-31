@@ -6,6 +6,7 @@ class Booking < ApplicationRecord
   validates :delivery_address, presence: true
   validates :status, presence: true
   validates :floor, presence: true
+  # validates :external_elevator, :acceptance => true
 
-  
+
 end

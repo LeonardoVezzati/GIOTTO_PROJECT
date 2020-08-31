@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(params_booking)
     @booking.user = current_user
     @booking.status = "pending"
-    @booking.package = current_user.packages.last
+    @booking.packages = current_user.packages.where(booking_id: nil)
     if @booking.save!
       redirect_to booking_path(@booking)
     else
