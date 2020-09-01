@@ -10,9 +10,18 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :database_authenticatable, :invitable
 
+  validates :budget_per_month, numericality: { greater_than: 0 }
+  after_create :create_team 
 
+
+  def create_team 
+    if team_id.nil? 
+      team = Team.create(rental_period: 12)
+      self.update team: team
+    end
+  end
  def create_booking
-  #self.bookings.create({status: "pending"})
+  self.bookings.create({status: "pending"})
  end
 
 
