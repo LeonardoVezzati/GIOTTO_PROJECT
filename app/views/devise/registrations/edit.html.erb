@@ -1,9 +1,19 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class= "row">
+<div class= "col-6 sign-up-image">
+    <%= image_tag "Sign-up-1"%>
+</div>
+
+<div class= col-6>
+  <div class= col-1>
+  </div>
+  <div class=col-10>
+    <div class= "form-container">
+<h2 class= "sign-up-text"> Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs form-text">
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -33,3 +43,9 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+    </div>
+  </div>
+
+  <div class =col-1>
+  </div>
+</div>

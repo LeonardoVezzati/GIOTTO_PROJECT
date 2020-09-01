@@ -4,7 +4,7 @@
   <div class= "index-list ">
 
     <div class="row">
-      <div class="col-4">
+      <div class="col-3">
         <div class="top-box-packages-rental align-items-center" >
           <div class="top-box-info-packages">
             <p>Rental period:</p>
@@ -12,19 +12,19 @@
           </div>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-3">
         <div class="top-box-packages align-items-center">
           <div class="top-box-info-packages">
-            <p>Available budget:</p>
-            <% @total = 0 %>
+            <p>Number of items:</p>
+            <% @total_items = 0 %>
             <% @packages.each do |package| %>
-              <% @total += package.furniture.price / 5  %>
+            <% @total_items += package.number %>
             <% end %>
-            <h2 class="furniture-title item-product index-title"><%= @total %></h2>
+            <h2><%= @total_items %></h2>
           </div>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-3">
         <div class="top-box-packages align-items-center" >
           <div class="top-box-info-packages">
            <p>Tot / month:</p>
@@ -56,9 +56,20 @@
                 <% @divide = 0.0417 %>
               <% end %>
             <% @packages.each do |package| %>
-              <h2><% @total += package.furniture.price * @divide %></h2>
+              <h2>€<%= @total += (((package.furniture.price_cents * @divide) * package.number)/100).ceil %></h2>
             <% end %>
-            <h2 class="furniture-title item-product index-title "><%= @total %></h2>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="top-box-packages align-items-center" >
+          <div class="top-box-info-packages">
+            <p>Available budget (€):</p>
+            <% @budget = 100 %>
+            <% @packages.each do |package| %>
+            `<h2>€<%= @budget - @total %></h2>
+            <% end %>
           </div>
         </div>
       </div>
@@ -68,6 +79,8 @@
         <h3>Your 1st package</h3>
         <%= link_to "Plan my delivery", new_booking_path, class: 'btn btn-primary btn-delivery' %>
       </div>
+
+
 
       <div class="row">
         <div class= col-4>
@@ -79,7 +92,9 @@
             <% @packages.each do |package| %>
         <div class= col-4>
               <div class="card-packages-product packages-card">
-
+                <div class= "number-of-items">
+                  <%= package.number %>
+                </div>
                 <div class="card-packages-image">
                   <%= cl_image_tag package.furniture.photo, width: 266, height: 266, crop: :fit %>
                 </div>
@@ -119,7 +134,7 @@
                   <% else %>
                     <% @divide = 0.0417 %>
                   <% end %>
-                  <p class="card-text card-price"><%= package.furniture.price * @divide %>$ / month</p>
+                  <p class="card-text card-price"><%= (package.furniture.price * @divide) * package.number %>$ / month</p>
                   <p class="card-text">Delivery date: <span class="pending">pending</span>  </p>
                   <p class="card-text">Expiry date: <span class="pending">pending</span> </p>
                   <p class="card-text">Rental plan: <%= @current_user.team.rental_period %>months</p>
@@ -131,10 +146,7 @@
               </div>
         </div>
             <% end %>
+
       </div>
  </div>
 </div>
-
-
-
-

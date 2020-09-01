@@ -9,7 +9,10 @@
 
           <% resource.class.invite_key_fields.each do |field| -%>
             <div class="form-inputs">
+              <%= f.input :firstname, label: 'First Name', placeholder: 'First Name' %>
+              <%= f.input :lastname, label: 'Last Name', placeholder: 'Last Name' %>
               <%= f.input :email, placeholder: 'user@domain.com' %>
+              <%= f.input :budget_per_month, placeholder: '/month'  %>
               <%= f.input :team_id, as: :hidden, input_html: {value: params[:team_id]} %>
 
             </div>

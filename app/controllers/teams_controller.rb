@@ -3,6 +3,7 @@ class TeamsController < ApplicationController
   def index
     @current_user_team = User.all.filter { |user| user.team_id == current_user.team_id }
     @team = current_user.team
+    @total_members= @team.users.count
   end
 
   def packages
