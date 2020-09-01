@@ -1,23 +1,39 @@
 
-<div class= lateral_menu>
+  <div class="d-flex" id="wrapper">
+  <div class= "lateral_menu_list">
+    <div class="border-right" id="sidebar-wrapper">
 
-  <ul class= lateral_menu_list>
-    <% if current_user.status == "manager" %>
-    <li><%= link_to teams_path do %><i class="fas fa-user-plus lateral-menu-logo"></i> Manage your team <% end %> </li>
-    <% end %>
-    <li><%= link_to furnitures_path do %><i class="fas fa-bars lateral-menu-logo"></i> Furnitures <% end %> </li>
-    <li><%= link_to packages_path do %><i class="fas fa-gift lateral-menu-logo"></i> My package <% end %> </li>
-    <li><%= link_to bookings_path do %><i class="fas fa-truck lateral-menu-logo"></i> My deliveries <% end %> </li>
-
-<% if current_user.status == "manager" %>
-    <li><i class="fas fa-wallet lateral-menu-logo"></i>My wallet</li>
-    <li><%= link_to invoices_path do %><i class="far fa-file-alt lateral-menu-logo"></i>Invoices <% end %></li>
-<% end %>
-
-  </ul>
-
-  <ul class= lateral_menu_list>
-    <li><i class="fas fa-user-cog lateral-menu-logo"></i>Settings</li>
-  </ul>
-
+      <div class="list-group list-group-flush">
+        <% if current_user.status == "manager" %>
+          <%= link_to teams_path, class: 'list-group-item list-group-item-action text-side' do %>
+            <i class="fas fa-user-plus lateral-menu-logo"></i> <span class="text-side">Manage your team</span>
+          <% end %>
+        <% end %>
+        <%= link_to furnitures_path, class: 'list-group-item list-group-item-action text-side' do %>
+          <i class="fas fa-bars lateral-menu-logo "></i>
+          <span class="text-side">Furnitures</span>
+        <% end %>
+        <%= link_to packages_path, class: 'list-group-item list-group-item-action text-side' do %>
+        <i class="fas fa-gift lateral-menu-logo"></i> <span class="text-side">My package</span>
+        <% end %>
+        <%= link_to bookings_path, class: 'list-group-item list-group-item-action text-side' do %>
+        <i class="fas fa-truck lateral-menu-logo"></i> <span class="text-side">My deliveries</span>
+        <% end %>
+        <% if current_user.status == "manager" %>
+          <%= link_to packages_path, class: 'list-group-item list-group-item-action text-side' do %>
+          <i class="fas fa-wallet lateral-menu-logo"></i> <span class="text-side">My wallet</span>
+          <% end %>
+          <%= link_to packages_path, class: 'list-group-item list-group-item-action text-side' do %>
+          <i class="far fa-file-alt lateral-menu-logo"></i> <span class="text-side"> Invoices</span>
+          <% end %>
+          <% end %>
+          <%= link_to packages_path, class: 'list-group-item list-group-item-action text-side settings-div' do %>
+          <i class="fas fa-user-cog lateral-menu-logo"></i> <span class="text-side"> Settings </span>
+          <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
