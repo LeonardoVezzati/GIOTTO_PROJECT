@@ -3,7 +3,7 @@
 <div class="navbar-giotto">
   <div class='flex1'>
     <ul class='list-inline-left'>
-       <% if current_user.status == "manager" %>
+       <% if current_user && current_user.status == "manager" %>
       <li class='text-list-dashboard'> <%= link_to 'Dashboard', teams_path %></li>
         <% else%>
       <li class='text-list-dashboard'> <%= link_to 'Dashboard', packages_path %></li>

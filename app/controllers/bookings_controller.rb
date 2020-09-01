@@ -10,14 +10,14 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
     @booking.packages = current_user.packages.where(booking_id: nil)
     if @booking.save!
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render :new
     end
   end
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.order(created_at: :desc)
   end
 
   def show
