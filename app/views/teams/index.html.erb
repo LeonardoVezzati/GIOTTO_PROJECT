@@ -7,37 +7,34 @@
       <div class="row">
 
         <div class="col-3">
-              <% if current_user.status == "manager" %>
-          <div class="top-box-packages-rental align-items-center" >
-            <div class="top-box-info-packages">
-              <%=  simple_form_for @team do |f| %>
-                <%= f.input :rental_period, input_html:{min:0, max:24} %>
-                <%= f.submit%>
-              <% end %>
+          <% if current_user.status == "manager" %>
+            <div class="top-box-packages-rental align-items-center" >
+              <div class="top-box-info-packages">
+                <%=  simple_form_for @team do |f| %>
+                  <%= f.input :rental_period, input_html:{min:0, max:24} %>
+                  <%= f.submit%>
+                <% end %>
               </div>
-          </div>
-              <% else %>
-                <div class="top-box-packages-rental align-items-center" >
-                  <div class="top-box-info-packages">
-                    <p>Rental period:</p>
-                    <h2><%= current_user.team.rental_period %>  months</h2>
-                  </div>
+            </div>
+          <% else %>
+            <div class="top-box-packages-rental align-items-center" >
+              <div class="top-box-info-packages">
+                <p>Rental period:</p>
+                <h2><%= current_user.team.rental_period %>  months</h2>
               </div>
-              <% end %>
-
+            </div>
+          <% end %>
         </div>
 
         <div class="col-3">
           <div class="top-box-packages align-items-center">
             <div class="top-box-info-packages">
-
               <p>N. of team members:</p>
               <%= @total_members %>
               <h2><%= @total %></h2>
             </div>
           </div>
         </div>
-
 
         <div class="col-3">
           <div class="top-box-packages align-items-center" >
@@ -59,72 +56,39 @@
 
       </div>
 
-      <div class="flex-item ">
-        <div class="user-card-teams">
-          <%= image_tag "Review-1" %>
-        <div class="notification-content ">
-          <h3 class=""> <%= link_to "Add new user", new_user_invitation_path(params: { team_id:  current_user.team_id }) %></h3>
-        </div>
-      </div>
-
-      <% @current_user_team.each do |user| %>
-        <% next if user == current_user %>
-        <div class="user-card">
-          <img src="https://source.unsplash.com/900x900/?face,people" class="avatar-large avatat-pos" />
-          <div class="notification-content">
-            <p><small><%= user.email %></small></p>
-            <p><small style="color:black;"><%= user.firstname %> <%= user.lastname %> </small></p>
-          </div>
-          <div class="notification-actions">
-            <p><small><%= user.budget_per_month %>$/month</small></p>
-            <% @user_id = user.id %>
-            <% if team_packages_teams_path(params: { user_id: user.id }) == nil  %>
-            <h2>noooo</h2>
-            <% else %>
-            <a class=""> <%= link_to "Profil", team_packages_teams_path(params: { user_id: user.id }) %></a>
-          <% end %>
-          </div>
-        </div>
-      <% end %>
-
-    </div>
-
-
-    <div>
+      <div>
 
       <div class= 12-col>
-      <div class="flex-item ">
-        <div class="package_title">
-          <h3>Your Team:</h3>
+        <div class="flex-item ">
+          <div class="package_title">
+            <h3>Your Team:</h3>
           </div>
         </div>
         <div class="user-card-teams">
           <div class="button-add-employee">
             <h2><%= link_to "+", new_user_invitation_path(params: { team_id:  current_user.team_id }) %></h2>
           </div>
-        <div class="notification-content ">
-          <h3 class=""> <%= link_to "Add new user", new_user_invitation_path(params: { team_id:  current_user.team_id }) %></h3>
-        </div>
-      </div>
-
-      <% @current_user_team.each do |user| %>
-        <% next if user == current_user %>
-        <div class="user-card-teams">
-          <%= image_tag "Review-1" %>
-          <div class="notification-content">
-            <p><small><%= user.email %></small></p>
-            <p><small><%= user.firstname %> <%= user.lastname %> </small></p>
-
-         </div>
-          <div class="notification-actions">
-            <p><small><%= user.budget_per_month %>$/month</small></p>
-
-            <% @user_id = user.id %>
-            <a class=""> <%= link_to "Profil", team_packages_teams_path(params: { user_id: user.id }) %></a>
+          <div class="notification-content ">
+            <h3 class=""> <%= link_to "Add new user", new_user_invitation_path(params: { team_id:  current_user.team_id }) %></h3>
           </div>
         </div>
-      <% end %>
-    </div>
+
+        <% @current_user_team.each do |user| %>
+          <% next if user == current_user %>
+          <div class="user-card-teams">
+            <%= image_tag "Review-1" %>
+            <div class="notification-content">
+              <p><small><%= user.email %></small></p>
+              <p><small><%= user.firstname %> <%= user.lastname %> </small></p>
+            </div>
+            <div class="notification-actions">
+              <p><small><%= user.budget_per_month %>$/month</small></p>
+              <% @user_id = user.id %>
+              <a class=""> <%= link_to "Profil", team_packages_teams_path(params: { user_id: user.id }) %></a>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 
