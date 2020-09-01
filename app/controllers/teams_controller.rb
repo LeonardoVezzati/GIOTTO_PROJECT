@@ -4,14 +4,16 @@ class TeamsController < ApplicationController
     @current_user_team = User.all.filter { |user| user.team_id == current_user.team_id }
     @team = current_user.team
     @total_members= @team.users.count
+    
+    @total_users_budget = @team.users.map { |user| user.budget_per_month }.sum
   end
 
   def packages
-
-    @current_user_packages = User.find(params[:user_id]).bookings.map{|b| b.packages }.flatten
+    @user = User.find(params[:user_id])
+    @current_user_packages = @user.bookings.map{|b| b.packages }.flatten
 
     if current_user.team_id == User.find(params[:user_id]).team_id
-      render "packages/index"
+      redirect_to packages_path(user: @user)
     else
       redirect_to teams_path
       flash[:alert] = 'Sorry, no access to that user.'

@@ -8,6 +8,14 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <%= f.input :firstname,
+                      required: true,
+                      input_html: { autocomplete: "Insert your name" } %>
+
+        <%= f.input :lastname,
+                    required: true,
+                    input_html: { autocomplete: "Insert your surname" } %>
+        
         <%= f.input :email, required: true, autofocus: true %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -15,6 +23,7 @@
         <% end %>
 
         <div class= "settings-text-form">
+        
         <%= f.input :password,
                     hint: "leave it blank if you don't want to change it",
                     required: false,

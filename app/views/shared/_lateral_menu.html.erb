@@ -6,7 +6,7 @@
       <li><%= link_to teams_path do %><i class="fas fa-user-plus lateral-menu-logo"></i> Manage your team <% end %> </li>
     <% end %>
     <li><%= link_to furnitures_path do %><i class="fas fa-bars lateral-menu-logo"></i> Furnitures <% end %> </li>
-    <li><%= link_to packages_path do %><i class="fas fa-gift lateral-menu-logo"></i> My package <% end %> </li>
+    <li><%= link_to team_packages_teams_path(params: { user_id: current_user.id }) do %><i class="fas fa-gift lateral-menu-logo"></i> My package <% end %> </li>
     <li><%= link_to bookings_path do %><i class="fas fa-truck lateral-menu-logo"></i> My deliveries <% end %> </li>
 
     <% if current_user.status == "manager" %>

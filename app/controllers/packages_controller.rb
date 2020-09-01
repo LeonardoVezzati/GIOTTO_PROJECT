@@ -20,8 +20,10 @@ class PackagesController < ApplicationController
   end
 
   def index
-    @booking = current_user.bookings.find_by(status: "pending")
-    @packages = current_user.packages.where(booking: @booking)
+   
+    @user = User.find(params[:user])
+    @booking = @user.bookings.find_by(status: "pending")
+    @packages = @user.packages.where(booking: @booking)
 
     @total_items = 0
     @packages.each do |package|

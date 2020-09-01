@@ -20,6 +20,8 @@ class User < ApplicationRecord
       self.update team: team
     end
   end
+
+# quick fix: removed validation from booking model. Why do we create a booking for every user?
  def create_booking
   self.bookings.create({status: "pending"})
  end
