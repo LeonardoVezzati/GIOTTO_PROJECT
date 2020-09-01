@@ -4,9 +4,11 @@
 <div class="navbar-giotto">
   <div class='flex1'>
     <ul class='list-inline-left'>
+
      <% if current_user == nil %>
      <li class='text-list-dashboard'> <%= link_to 'Login', teams_path %></li>
        <% elsif current_user.status == "manager" %>
+      
       <li class='text-list-dashboard'> <%= link_to 'Dashboard', teams_path %></li>
 
         <% else %>
