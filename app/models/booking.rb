@@ -8,5 +8,4 @@ class Booking < ApplicationRecord
   validates :floor, presence: true
   # validates :external_elevator, :acceptance => true
 
-
 end

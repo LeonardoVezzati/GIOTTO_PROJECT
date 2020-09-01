@@ -4,9 +4,11 @@
 <div class="navbar-giotto">
   <div class='flex1'>
     <ul class='list-inline-left'>
+
      <% if current_user == nil %>
      <li class='text-list-dashboard'> <%= link_to 'Login', teams_path %></li>
        <% elsif current_user.status == "manager" %>
+      
       <li class='text-list-dashboard'> <%= link_to 'Dashboard', teams_path %></li>
 
         <% else %>
@@ -26,7 +28,7 @@
       <li class="nav-item dropdown">
         <li class="text-list-right dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-cog"></i></li>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Account</a>
+          <%= link_to "Account", edit_user_registration_path, class: "dropdown-item" %>
           <% if current_user == nil %>
             <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
           <% else %>
