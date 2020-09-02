@@ -8,7 +8,7 @@
         <div class="top-box-packages-rental align-items-center" >
           <div class="top-box-info-packages">
             <p>Rental period:</p>
-            <h2><%= current_user.team.rental_period %>  months</h2>
+            <h2><%= @user.team.rental_period %>  months</h2>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
         <div class="top-box-packages align-items-center" >
           <div class="top-box-info-packages">
             <p>Available budget:</p>
-            <h2>€<%= current_user.budget_per_month - @total %></h2>
+            <h2>€<%= @user.budget_per_month - @total %></h2>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@
                   <p class="card-text card-price"><%= package.price %>€ / month</p>
                   <p class="card-text">Delivery date: <span class="pending">pending</span>  </p>
                   <p class="card-text">Expiry date: <span class="pending">pending</span> </p>
-                  <p class="card-text">Rental plan: <%= @current_user.team.rental_period %>months</p>
+                  <p class="card-text">Rental plan: <%= @user.team.rental_period %>months</p>
 
                   <div class="delete-button">
                     <%= link_to "x", package_path(package), method: :delete, data: { confirm: "Are you sure ?" } %>
