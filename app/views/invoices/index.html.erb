@@ -9,24 +9,36 @@
         </div>
       </div>
 
-      <div class="top-box-packages-rental align-items-center" >
-          <div class="top-box-info-packages">
-            <%= link_to "Invoice.01", invoice_path(@invoice), class: "btn btn-create btn-create:hover" %>
-          </div>
-      </div>
-
-
-
-
-
+     <div class="flex-item ">
       <% @invoices.each do |invoice| %>
-        <div class="user-card user-empty">
-          <img src="https://source.unsplash.com/900x900/?white" class="avatar-large avatar-empty " />
-          <div class="notification-content ">
-            <%= link_to "Invoice.01", invoice_path(@invoice), class: "btn btn-create btn-create:hover" %>
+       <div class="user-card row align-items-center">
+        <img src="https://source.unsplash.com/900x900/?face,people" class="avatar-large avatar-empty " />
+          <div class="notification-content">
+            <div class="container_details">
+              <div class="box-details">
+                <h3 class="box-details"> <%= link_to invoice_path(invoice) do %> invoice number <%end%> </h3>
+              </div>
+              <div class="box-details">
+                <h3 class="box-details"><%= invoice.number%></h3>
+              </div>
+              <div class="box-details">
+                <h3 class="box-details">date</h3>
+              </div>
+              <div class="box-details">
+                <h3 class="box-details"><%= invoice.emission%></h3>
+              </div>
+              <div class="box-details">
+                <h3 class="box-details"><%= invoice.price%></h3>
+              </div>
+              <div class="box-details">
+                <h3 class="box-details"> Pending</h3>
+              </div>
+            </div>
           </div>
+          <%end%>
         </div>
-      <% end %>
+
+      </div>
 
 
   </div>
