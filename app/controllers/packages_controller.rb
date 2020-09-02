@@ -14,6 +14,7 @@ class PackagesController < ApplicationController
     if @package.save
       # notifiction "added to your packages
       redirect_to furnitures_path
+      flash[:alert] = 'Item added to your package.'
     else
       render 'furnitures/show'
     end
