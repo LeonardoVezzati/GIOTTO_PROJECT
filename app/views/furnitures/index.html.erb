@@ -7,7 +7,7 @@
   <div class= "index-list">
 
     <div class="row">
-          
+
       <div class="col-3">
         <div class="top-box-packages-rental align-items-center" >
           <div class="top-box-info-packages">
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="col-3">
         <div class="top-box-packages align-items-center" >
           <div class="top-box-info-packages">
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="col-3">
         <div class="top-box-packages align-items-center">
           <div class="top-box-info-packages">
@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
 
     <div class="flex-item ">
@@ -54,7 +54,7 @@
       </div>
     <div class = "row">
 
-      
+
       <div class= col-12>
         <div class="container-filter">
           <div class="card-product-small justify-content-left align-items-center">
@@ -88,14 +88,17 @@
 
 
 
-      
+
 
     <div class="row">
       <% @furnitures.each do |furniture| %>
         <div class= col-4>
           <div class= "hover">
             <div class= "product-card-index">
-              <%= link_to furniture_path(furniture) do %> <%= cl_image_tag furniture.photo, width: 266, height: 266, crop: :fit %> <% end %>
+              <%= link_to furniture_path(furniture) do %>
+                <img src="https://images.unsplash.com/photo-1590698933947-a202b069a861?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" style="width: 100%" alt="">
+                <%#= cl_image_tag furniture.photo, width: 266, height: 266, crop: :fit %>
+              <% end %>
               <ul>
                 <li class="product-title"><%= furniture.name %></li>
                 <li class="product-price">from <%= humanized_money_with_symbol(furniture.price/24) %>/month</li>
