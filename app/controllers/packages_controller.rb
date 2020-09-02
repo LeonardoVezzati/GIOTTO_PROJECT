@@ -20,7 +20,6 @@ class PackagesController < ApplicationController
   end
 
   def index
-
     @user = User.find(params[:user])
     @booking = @user.bookings.find_by(status: "pending")
     @packages = @user.packages.where(booking: @booking)

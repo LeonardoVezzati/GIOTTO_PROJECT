@@ -4,6 +4,7 @@ class TeamsController < ApplicationController
     @current_user_team = User.all.filter { |user| user.team_id == current_user.team_id }
     @team = current_user.team.users.map { |user| { user: user, expenses: user.packages.map{ |pack| pack.price }.sum }}
     @total_members= current_user.team.users.count
+    @total_users_budget = @team.users.map { |user| user.budget_per_month }.sum
 
   end
 
