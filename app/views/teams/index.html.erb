@@ -88,7 +88,9 @@
           <div class="col-3">
             <div class="notification-content">
               <p><small style="color:black;"><%= user[:user].budget_per_month %>$</small></p>
+              <% unless current_user.team.budget.nil? || current_user.team.budget.zero? %>
               <p><small> <%= ((user[:user].budget_per_month.to_f / current_user.team.budget.to_f) * 100).round %>  % of total expenses </small></p>
+              <% end %>
            </div>
          </div>
 
