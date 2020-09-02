@@ -11,9 +11,12 @@
             <div class="top-box-packages-rental align-items-center" >
               <div class="top-box-info-packages">
                 <%=  simple_form_for current_user.team do |f| %>
-                  <%= f.input :rental_period, input_html:{min:0, max:24} %>
-                  <%= f.submit%>
+                  <%= f.input :rental_period, input_html:{min:0, max:24}, placeholder: 'n. of month' %>
+
+                  <% f.options[:html][:class] << 'form-horizontal' %>
+                  <%= f.button :submit, 'Select' %>
                 <% end %>
+                <form class="simple_form edit_model form-horizontal"/>
               </div>
             </div>
           <% else %>
@@ -78,7 +81,7 @@
         <% next if user[:user] == current_user %>
         <div class="user-card row align-items-center">
           <img src="https://source.unsplash.com/900x900/?face,people" class="avatar-large avatat-pos" />
-        <div class="col-4">
+        <div class="col-5">
           <div class="notification-content">
             <p class="employee-det"><small style="color:black; font-size:18px;"><%= user[:user].firstname %> <%= user[:user].lastname %> </small></p>
             <p class="employee-det"><small><%= user[:user].email %></small></p>
@@ -109,7 +112,7 @@
           </div>
         </div>
 
-       <div class="col-2">
+       <div class="col-1">
            <div class="notification-content" style="margin-right:0px; text-align: center;">
 
 
