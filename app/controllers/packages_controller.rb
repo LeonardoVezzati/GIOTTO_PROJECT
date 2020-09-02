@@ -20,7 +20,6 @@ class PackagesController < ApplicationController
   end
 
   def index
-   
     @user = User.find(params[:user])
     @booking = @user.bookings.find_by(status: "pending")
     @packages = @user.packages.where(booking: @booking)
@@ -30,14 +29,14 @@ class PackagesController < ApplicationController
       @total_items += package.number
     end
 
-    @total = 0 
-    
-      @packages.each do |package| 
-        @total += package.price 
-      end     
-      
-      @budget = 100 
-      @budget - @total 
+    @total = 0
+
+      @packages.each do |package|
+        @total += package.price
+      end
+
+      @budget = 100
+      @budget - @total
   end
 
   def destroy
