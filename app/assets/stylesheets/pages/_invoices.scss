@@ -28,13 +28,33 @@ color: #000000;
 }
 
 .container_invoice{
-  display: relative;
-  right: 80px;
-  left: 80px;
-  top: 640px;
-  bottom: 640px;
-  background: #FFFBF6;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: #FFFBF6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 60vw;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+.rectangle-invoice{
+    left: 10%;
+    right: 10%;
+    top: 10%;
+    bottom: 10%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 40vh;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 

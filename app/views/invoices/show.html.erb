@@ -1,10 +1,32 @@
 <div class= "row row-container">
   <%= render 'shared/lateral_menu' %>
-  <div class= "index-list">
+    <div class= "index-list">
 
-    <div class = "container_invoice">
-      invoice
+      <div class="container_invoice">
+        <div class="rectangle-invoice">
+          <div class="box-details">
+            <%= @invoice.number %>
+          </div>
+          <div class="">
+            <p class="">Date: <%= @invoice.emission %></h3>
+            <p class="">Released by: Giotto</p>
+            <p class="">Customer: <%= @invoice.team.company %></p>
+          </div>
+           <div class="">
+            <ul>
+              <% @invoice.team.users.each do |user| %>
+                <% user.packages.each do |package| %>
+                <li><%= package.furniture.name %> - <%= package.number %>x at €<%= package.price %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+
+
+
+
+        </div>
+       </div>
+
     </div>
-
-  </div>
 </div>
