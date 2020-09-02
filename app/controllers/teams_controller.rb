@@ -8,16 +8,14 @@ class TeamsController < ApplicationController
   end
 
   def packages
-
     @current_user_packages = User.find(params[:user_id]).bookings.map{|b| b.packages }.flatten
 
     if current_user.team_id == User.find(params[:user_id]).team_id
-      render "packages/index"
+      redirect_to packages_path(user: params[:user_id])
     else
       redirect_to teams_path
       flash[:alert] = 'Sorry, no access to that user.'
     end
-
   end
 
   def update
