@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = "pending"
     @booking.packages = current_user.packages.where(booking_id: nil)
-    binding.pry
     if @booking.save!
       redirect_to bookings_path
     else

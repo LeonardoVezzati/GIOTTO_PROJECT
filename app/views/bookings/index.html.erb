@@ -28,7 +28,7 @@
               </div>
               <div>
                 <p class= "delivery-date">We will deliver at about:</h2>
-                  <h2><%= booking.delivery_time.strftime("%H:%M") %></h2>
+                  <h2><%= booking.delivery_time&.strftime("%H:%M") %></h2>
               </div>
               <%= link_to "Update", edit_booking_path(booking), class: "btn btn-create btn-create:hover" %>
               <%= link_to "Delete", booking_path(booking), method: :delete, class: "btn btn-create btn-create:hover" %>
