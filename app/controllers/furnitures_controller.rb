@@ -112,6 +112,7 @@ class FurnituresController < ApplicationController
   def show
     @package = Package.new
     @furniture = Furniture.find(params[:id])
+    
   end
 
 

@@ -35,12 +35,12 @@
       <% else %>
         <% @divide = 0.0417 %>
       <% end %>
-      <li class="product-show-list-rentalprice">€<%= (@furniture.price * @divide) %>  /month</li>
+      <li class="product-show-list-rentalprice">€<%= (@furniture.price_cents * @divide / 100).ceil %>  /month</li>
       <li class="product-show-list-price">Original retail price: €<%= @furniture.price %></li>
       <li class="product-show-list-description"><%= @furniture.description %></li>
         <%= simple_form_for @package do |f| %>
         <%= f.input :furniture_id, as: :hidden, input_html: { value: @furniture.id } %>
-        <%= f.input :number %>
+        <%= f.input :number, input_html:{min:0} %>
         <div class= "submit-button-hover">
         <%= f.submit "Add to my package", class: "product-show-list-submit-button" %>
         </div>
@@ -49,7 +49,9 @@
     </div>
     <div class= col-6>
     <div class="product-show-image">
-      <%= cl_image_tag @furniture.photo, width: 400, height: 400, crop: :fit %>
+      <% @furniture.photo.each do |p| %>
+        <%= cl_image_tag p, width: 400, height: 400, crop: :fit %>
+      <% end %>
     </div>
    </div>
   </div>
