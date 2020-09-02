@@ -2,7 +2,8 @@ class Package < ApplicationRecord
   belongs_to :furniture
   belongs_to :booking, optional: true
   belongs_to :user
-  validates :number, presence: true
+  validates :number, presence: true, numericality: { greater_than: 0 }
+  
   validate :under_budget
 
   def under_budget

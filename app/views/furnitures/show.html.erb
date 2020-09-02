@@ -35,7 +35,7 @@
       <% else %>
         <% @divide = 0.0417 %>
       <% end %>
-      <li class="product-show-list-rentalprice">€<%= @furniture.price * @divide %>  /month</li>
+      <li class="product-show-list-rentalprice">€<%= (@furniture.price * @divide) %>  /month</li>
       <li class="product-show-list-price">Original retail price: €<%= @furniture.price %></li>
       <li class="product-show-list-description"><%= @furniture.description %></li>
         <%= simple_form_for @package do |f| %>
