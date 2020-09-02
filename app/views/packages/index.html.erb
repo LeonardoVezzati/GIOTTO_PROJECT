@@ -72,9 +72,21 @@
                   </h2>
                   <h3 class="card-title card-name-furniture"><%= package.furniture.name %></h3>
                   <p class="card-text card-price"><%= package.price %>€ / month</p>
-                  <p class="card-text">Delivery date: <span class="pending">pending</span>  </p>
-                  <p class="card-text">Expiry date: <span class="pending">pending</span> </p>
-                  <p class="card-text">Rental plan: <%= @user.team.rental_period %>months</p>
+                  <p class="card-text">Delivery date:
+                    <% if package.booking == nil  %>
+                    <span class="pending"> <h2>Pending</h2> </span>
+                  <% else %>
+                    <%= package.booking.delivery_date %>
+                  <% end %>
+                </p>
+                  <p class="card-text">Expiry date:
+                       <% if package.booking == nil  %>
+                    <span class="pending"> <h2>Pending</h2> </span>
+                  <% else %>
+                    <%= package.booking.delivery_date + (@user.team.rental_period * 30)  %>
+                  <% end %>
+                  </p>
+                  <p class="card-text">Rental plan: <%= @user.team.rental_period %> months</p>
 
                   <div class="delete-button">
                     <%= link_to "x", package_path(package), method: :delete, data: { confirm: "Are you sure ?" } %>
