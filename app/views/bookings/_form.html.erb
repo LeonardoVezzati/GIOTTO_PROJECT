@@ -10,7 +10,7 @@
         <%=simple_form_for [@booking] do |f|%>
           <%= f.input :delivery_date, as: :string, required: false, input_html: {class: "datepicker"} %>
           <%= f.input :delivery_time, as: :string, required: false, input_html: {class: "time"} %>
-          <div id="booking-dates" data-dates="<%=Booking.all.map{|booking|"#{booking.delivery_date.strftime("%d-%m-%Y")} #{booking.delivery_time.strftime("%H:%M")}"}.to_json%>"></div>
+          <div id="booking-dates" data-dates="<%=Booking.all.map{|booking|"#{booking.delivery_date&.strftime("%d-%m-%Y")} #{booking.delivery_time&.strftime("%H:%M")}"}.compact.to_json%>"></div>
           <%= f.input :delivery_address %>
           <%= f.input :floor %>
           <%= f.input :building_elevator %>

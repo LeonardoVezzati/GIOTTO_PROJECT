@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
-  has_many :packages
+  has_many :packages, dependent: :destroy
   # validates :delivery_date, presence: true
   # validates :delivery_time, presence: true
   # validates :delivery_address, presence: true
