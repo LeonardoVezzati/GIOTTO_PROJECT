@@ -23,8 +23,10 @@
           <%= link_to packages_path, class: 'list-group-item list-group-item-action text-side' do %>
           <i class="fas fa-wallet lateral-menu-logo"></i> <span class="text-side">My wallet</span>
           <% end %>
-          <%= link_to invoice_path(current_user.team.invoices.first), class: 'list-group-item list-group-item-action text-side' do %>
-          <i class="far fa-file-alt lateral-menu-logo"></i> <span class="text-side"> Invoices</span>
+          <% if current_user.team.invoices.first %>
+            <%= link_to invoice_path(current_user.team.invoices.first), class: 'list-group-item list-group-item-action text-side' do %>
+              <i class="far fa-file-alt lateral-menu-logo"></i> <span class="text-side"> Invoices</span>
+            <% end %>
           <% end %>
         <% end %>
         <%= link_to edit_user_registration_path, class: 'list-group-item list-group-item-action text-side settings-div' do %>
