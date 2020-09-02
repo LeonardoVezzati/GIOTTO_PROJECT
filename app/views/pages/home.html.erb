@@ -1,9 +1,14 @@
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <Body style = "background-color: #FFFBF5">
 </Body>
+
+<body>
+
 <div style= "background-color: #FAF0E1">
-<div class="container-homepage-left">
+<div class="container-homepage-left" style="margin-bottom:25px; padding-bottom:25px;">
   <div class = "row">
-    
+
     <div class = "col-6 content-centered" >
       <h1> Rent furniture that's ready for business. </h1>
       <h2> Unleash your team's potential. </h2>
@@ -14,20 +19,27 @@
         <%= link_to "Discover the Giotto solution", dashboard_path %>
       </div>
     </div>
-    
-    <div class = col-6>
-      <%= image_tag("D1-Chair-1.png") %>
-    </div>
 
+      <div class = col-6>
+        <%= image_tag("D1-Chair-1.png") %>
+      </div>
   </div>
 </div>
 </div>
 
 <div class="container-homepage-right">
   <div class = "row">
+
     <div class = col-6>
+      <div data-aos="fade-right"
+           data-aos-offset="200"
+           data-aos-delay="50"
+           data-aos-duration="1000"
+           data-aos-easing="ease-in-out">
       <%= image_tag 'Home-page-1.png'%>
     </div>
+    </div>
+
     <div class = "col-6 content-centered">
       <h1>The smartest solution for remote workers.</h1>
       <h2>Best design and ergonomics. Free delivery and installation. Flexible duration. No hassles.</h2>
@@ -46,12 +58,19 @@
       <h1>The most sustainable way to consume furniture, a perfect circle!</h2>
       <h2>All the products are made with the highest quality materials in order to last and after every usage we refurbish them to further extend their life-cycle.</h2>
       <p>Discover more about the Giotto's atelier and how we select and refurbish our products</p>
-      <div class= "button-homepage">  
+      <div class= "button-homepage">
         <%= link_to "OUR PERFECT CIRCLE", "#"%>
       </div>
     </div>
+
     <div class = col-6>
+            <div data-aos="fade-left"
+           data-aos-offset="200"
+           data-aos-delay="50"
+           data-aos-duration="1000"
+           data-aos-easing="ease-in-out">
       <%= image_tag 'Home-page-2.png'%>
+        </div>
     </div>
   </div>
 </div>
@@ -59,7 +78,13 @@
 <div class="container-homepage-right">
   <div class = "row">
     <div class = col-6>
+                  <div data-aos="fade-right"
+           data-aos-offset="200"
+           data-aos-delay="50"
+           data-aos-duration="1000"
+           data-aos-easing="ease-in-out">
       <%= image_tag 'Home-page-3.png'%>
+            </div>
     </div>
     <div class = "col-6 content-centered">
       <h1>The best for your business.</h2>
@@ -155,3 +180,10 @@
     </div>
   </div>
 </div>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>

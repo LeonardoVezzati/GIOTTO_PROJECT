@@ -14,6 +14,7 @@ class PackagesController < ApplicationController
     if @package.save
       # notifiction "added to your packages
       redirect_to furnitures_path
+      flash[:alert] = 'Item added to your package.'
     else
       render 'furnitures/show'
     end
@@ -42,7 +43,7 @@ class PackagesController < ApplicationController
   def destroy
     @package = Package.find(params[:id])
     @package.destroy
-    redirect_to packages_path
+    redirect_to packages_path(user: current_user)
   end
 
   private
