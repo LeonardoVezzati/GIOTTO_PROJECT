@@ -50,32 +50,49 @@
         <%= link_to "Plan your delivery", new_booking_path, class: 'btn btn-primary btn-delivery' %>
       </div>
 
+
       <% @bookings.each do |booking| %>
-        <div class=delivery-card>
-          <div class= "row">
-            <div class= col-5>
-            <div class="image-background">
-              <div class='delivery-image'>
+          <div class="user-card row align-items-center" style= "margin-top: 40px">
+            
+            <div class="button-add-employee">
+              <%= link_to new_user_invitation_path(params: { team_id:  current_user.team_id }), class: "team-icon" do %><i class="fas fa-truck"></i><% end %>
+            </div>
+
+            <div class="col-2">
+              <div class="notification-content" style= "margin-left: 10%">
+                <%= booking.status.capitalize %>
               </div>
             </div>
+
+            <div class="col-3">
+              <div class="notification-content">
+                <p>Delivery date:</p>
+                <% if booking.delivery_date.present? %>
+                  <%= booking.delivery_date&.strftime('%A %e %B %Y') %>
+                <% else %>
+                  <%= booking.status.capitalize %>
+                <% end %>
+              </div>
             </div>
-            <div class= "col-7 delivery-info-card">
-              <p class="next-delivery-text">Your next delivery:</p>
-              <div>
-                <h2 class="pending"><%= booking.status.capitalize %></h2>
+
+            <div class="col-3">
+              <div class="notification-content">
+                <p>Approximate delivery time:</p>
+                <% if booking.delivery_time.present? %>
+                  <%= booking.delivery_time&.strftime("%H:%M") %>
+                <% else %>
+                  <%= booking.status.capitalize %>
+                <% end %>
               </div>
-              <div>
-                <p class= "delivery-date">Your delivery date:</p>
-                <h2><%= booking.delivery_date&.strftime('%A %e %B %Y') %></h2>
-              </div>
-              <div>
-                <p class= "delivery-date">We will deliver at about:</h2>
-                  <h2><%= booking.delivery_time&.strftime("%H:%M") %></h2>
-              </div>
-              <%= link_to "Update", edit_booking_path(booking), class: "btn btn-create btn-create:hover" %>
-              <%= link_to "Delete", booking_path(booking), method: :delete, class: "btn btn-create btn-create:hover" %>
             </div>
-          </div>
+
+            <div class="col-2">
+              <div class= "double-buttons-delivery ">
+                <p class= "d-flex justify-content-end"><%= link_to "Update", edit_booking_path(booking), class: "btn btn-create" %></p>
+                <p class= "d-flex justify-content-end"><%= link_to "Delete", booking_path(booking), method: :delete, class: "btn btn-create" %></p>
+              </div>
+            </div>
+
         </div>
       <% end %>
 
