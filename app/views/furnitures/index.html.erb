@@ -96,7 +96,7 @@
           <div class= "hover">
             <div class= "product-card-index">
 
-              <%= link_to furniture_path(furniture) do %> <%= cl_image_tag furniture.photo.first, width: 266, height: 266, crop: :fit %> <% end %>
+              <%= link_to furniture_path(furniture) do %> <%= cl_image_tag furniture.images.first.key, width: 266, height: 266, crop: :fit %> <% end %>
 
               <ul>
                 <li class="product-title"><%= furniture.name %></li>
