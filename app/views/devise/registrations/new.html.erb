@@ -26,6 +26,9 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :budget_per_month,
+                required: true,
+                input_html: {value: 1 }, as: :hidden %>
   </div>
 
   <div class="form-actions">
