@@ -17,27 +17,37 @@
             <div class="notification-content">
               <div class="container_details">
                 <div class="box-details">
-                  <h3 class="box-details"> <%= link_to invoice_path(invoice) do %> invoice number <%end%> </h3>
+                  <h3 class="align-right"> <%= link_to invoice_path(invoice) do %> invoice number <%end%> </h3>
                 </div>
                 <div class="box-details">
-                  <h3 class="box-details"><%= invoice.number%></h3>
+                  <h3 class="align-left"><span class ="color-gray"><%= invoice.number%></span></h3>
                 </div>
                 <div class="box-details">
-                  <h3 class="box-details">date</h3>
+                  <h3 class="align-right"><span class ="color-gray">date</span></h3>
                 </div>
                 <div class="box-details">
-                  <h3 class="box-details"><%= invoice.emission%></h3>
+                  <h3 class="align-left"><span class ="color-gray"><%= invoice.emission%></span></h3>
                 </div>
                 <div class="box-details">
-                  <h3 class="box-details"><%= invoice.price%></h3>
+                  <h3 class="align-right"><span class ="color-gray"> <%= invoice.price%> € </span></h3>
                 </div>
                 <div class="box-details">
-                  <h3 class="box-details"> Pending</h3>
+
                 </div>
+                <div class="box-details">
+
+                </div>
+                <div class="box-details">
+                  <h3 class="align-left"><span class ="color-gray">Pending</span></h3>
                 </div>
               </div>
+
+               </div>
               </div>
-            <%end%>
+              </div>
+          <%end%>
+
+
 
 
 
