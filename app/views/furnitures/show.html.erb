@@ -53,8 +53,8 @@
     <div class= col-6>
     <div class="product-show-image">
       
-      <% @furniture.photo.each do |p| %>
-        <%= cl_image_tag p, width: 400, height: 400, crop: :fit %>
+      <% @furniture.images.each do |image| %>
+        <%= cl_image_tag image.key, width: 400, height: 400, crop: :fit %>
       <% end %>
     </div>
    </div>
