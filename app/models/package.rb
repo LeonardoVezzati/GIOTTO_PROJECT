@@ -7,7 +7,7 @@ class Package < ApplicationRecord
   validate :under_budget
 
   def under_budget
-    total = Package.total(user)
+    total = Package.total(user, self)
 
     if (user.budget_per_month - total - (self.price)) < 0
       errors.add(:number, "You don't have enough budget for these items")
@@ -45,13 +45,14 @@ class Package < ApplicationRecord
   end
 
 
-  def self.total(user)
+  def self.total(user, package_validates = nil )
 
     packages = user.packages.where(booking: self).or(user.packages.where(booking_id: nil))
 
     total = 0
 
       packages.each do |package|
+        next package == package_validates
         total += package.price
       end
 
