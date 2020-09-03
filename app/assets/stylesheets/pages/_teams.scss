@@ -86,7 +86,7 @@
 }
 
 .employee-det {
-  padding-left:155px;
+  padding-left: 5%;
 }
 
 .user-card h3 {
@@ -185,7 +185,6 @@
   text-align: left;
   align-items:center;
   justify-content: center;
-
 }
 
 .form-horizontal {
@@ -202,7 +201,7 @@
 }
 
 .form-control.is-valid {
-     border-color: #d4ccbf;
+    border-color: #d4ccbf;
     padding-right: calc(1.5em + 0.75rem);
     background-image: url(none);
     background-repeat: no-repeat;
@@ -214,3 +213,20 @@
   border: 1px solid #b9b9b9;
 }
 
+
+.team-icon {
+  color: #3e4452b0;
+  font-size: 20px;
+}
+ 
+  .progress-bar { 
+    background-color: #FBC0B4 !important;
+  }
+
+  .img-avatar {
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid rgb(220,220,220);
+    box-shadow: 2px 2px 16px 1px rgba(200, 200, 200, 0.1);
+  }
