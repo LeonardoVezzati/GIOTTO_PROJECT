@@ -25,6 +25,9 @@ color: #000000;
   text-align: center;
   font-size: 20px;
   padding-left: 20px;
+  .color-gray{
+    color:gray;
+  }
 }
 
 .container_invoice{
@@ -35,6 +38,7 @@ color: #000000;
     background: #FFFBF6;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 60vw;
+    height: 60vw;
     margin: auto;
     margin-left: auto;
     margin-right: auto;
@@ -42,6 +46,8 @@ color: #000000;
     margin-bottom: 30px;
     padding-top: 40px;
     padding-bottom: 40px;
+        width: 40vw;
+    height: 60vh;
   }
 
 .rectangle-invoice{
@@ -55,8 +61,71 @@ color: #000000;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
+    width: 80%;
+  }
+
+.line{
+    border-bottom: 1px solid #000000;
+    transform: rotate(0deg);
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-left:30px;
+    padding-right:30px;
 }
 
+.flex-invoice{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+  padding-left: 30px;
+  ul{
+    width: 100%;
+  }
+}
+.item-invoice{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .price-invoice{
+      text-align: end;
+      padding-right: 30px;
+    }
+    .package-name{
+      text-align: start;
+    }
+}
+.invoices-flexbox{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flex-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.align-right{
+  background-color: white;
+  border: 1px solid white;
+  text-align: right;
+  font-size: 20px;
+  padding-left: 20px;
+}
+.align-left{
+  background-color: white;
+  border: 1px solid white;
+  text-align: left;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.gray-font{
+  font-color:#F4F4F4;
+}
 
 
 

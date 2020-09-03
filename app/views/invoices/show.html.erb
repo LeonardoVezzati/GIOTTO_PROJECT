@@ -4,23 +4,48 @@
 
       <div class="container_invoice">
         <div class="rectangle-invoice">
+        <div class="box-details">
+          <div class="flex1">
+            <div class="logo-container">
+              <a><img src="/assets/logo-ea346c0af4d38bfa59420a0821d3a8cc5abdaa5c52e33098cb5dd23ca94a575a.png"> </a>
+            </div>
+          </div>
+          </div>
           <div class="box-details">
-            <%= @invoice.number %>
+            <p>Invoice no. <%= @invoice.number %> </p>
           </div>
-          <div class="">
-            <p class="">Date: <%= @invoice.emission %></h3>
-            <p class="">Released by: Giotto</p>
-            <p class="">Customer: <%= @invoice.team.company %></p>
+          <div class = "flex-invoice">
+            <p class = "flex-item" > Date: </p>
+            <p class = "flex-item" > <%= @invoice.emission %> </p>
           </div>
+          <div class = "flex-invoice">
+            <p class = "flex-item" > Released by: </p>
+            <p class = "flex-item" > Giotto</p>
+          </div>
+          <div class = "flex-invoice">
+            <p class = "flex-item" > Customer: </p>
+            <p class = "flex-item" > <%= @invoice.team.company %></p>
+          </div>
+          <div class = "line"></div>
+
            <div class="">
-            <ul>
+
+             <ul class= "">
+              <% total = 0%>
               <% @invoice.team.users.each do |user| %>
                 <% user.packages.each do |package| %>
-                <li><%= package.furniture.name %> - <%= package.number %>x at €<%= package.price %></li>
+                <li class ="item-invoice"><span class="package-name"><%= package.furniture.name %></span> <span><%= package.number %>x</span> <span class="price-invoice"> €<%= package.price %></span></li>
+                <% total += package.price %>
                 <% end %>
               <% end %>
             </ul>
           </div>
+          <div class = "line"></div>
+          <div class="flex-invoice">
+            <p class= "item-invoice">Total</p>
+            <p class= "flex-item"><span class=""><%=total%>€</span></p>
+          </div>
+
 
 
 
