@@ -139,6 +139,7 @@ h2  {
 .packages-card {
 margin-left: 10px;
 margin-right: 10px;
+position: absolute;
 }
 
 .add-item {
@@ -225,7 +226,7 @@ margin-right: 10px;
   }
   p {
     padding-left: 4%;
-  } 
+  }
 }
 
 .card-packages-image {
@@ -250,7 +251,7 @@ margin-right: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0;  
+  min-width: 0;
 }
 
 .top-box-info-packages {
@@ -283,8 +284,9 @@ margin-right: 10px;
 }
 
 .number-of-items {
-  width: 40px;
-  height: 40px;
+
+  width: 33px;
+  height: 33px;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.125);
   position: relative;
@@ -295,3 +297,60 @@ margin-right: 10px;
   margin: 2%;
   box-shadow: 2px 2px 16px 1px rgba(200, 200, 200, 0.1);
 }
+
+.add-items-btn {
+
+  top: 0px;
+  left: 97%;
+  width: 24px;
+  height:24px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0%;
+  box-shadow: 2px 2px 16px 1px rgba(200, 200, 200, 0.1);
+}
+
+.rmv-items-btn {
+
+  bottom: 0%;
+  left: 97%;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0%;
+  box-shadow: 2px 2px 16px 1px rgba(200, 200, 200, 0.1);
+}
+
+.update-nb-item {
+  width:100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

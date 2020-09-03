@@ -51,18 +51,28 @@
             <%= link_to "+", furnitures_path %>
           </div>
         </div>
-
-            <% @packages.each do |package| %>
-        <div class= col-4>
-              <div class="card-packages-product packages-card">
+          <% @packages.each do |package| %>
+            <div class= col-4>
+              <div class="card-packages-product packages-card" >
                 <div class= "number-of-items">
-                  <%= package.number %>
+                   <%= package.number  %>
                 </div>
-                <div class="card-packages-image">
+                <div class="card-packages-image" id="package-<%= package.id %>">
                   <%= cl_image_tag package.furniture.photo, width: 266, height: 266, crop: :fit %>
                 </div>
-
                 <div class="card-body">
+
+                  <div class="container">
+                    <div class="row card-title" style="align-content: center; justify-content: center;">
+
+                   <div class= "add-items-btn" style="margin-right:25px;">
+                  <%= link_to "+", item_increase_package_path(package), method: :patch, remote: true  %>
+                </div>
+                <div class= "rmv-items-btn">
+                  <%= link_to "-", item_decrease_package_path(package), method: :patch, remote: true  %>
+                </div>
+                    </div>
+                  </div>
                   <h2 class="card-title card-status">
                   <% if package.booking == nil  %>
                     <span class="pending"> <h2>Pending</h2> </span>
@@ -74,14 +84,15 @@
                   <p class="card-text card-price"><%= package.price %>€ / month</p>
                   <p class="card-text">Delivery date:
                     <% if package.booking == nil  %>
-                    <span class="pending"> <h2>Pending</h2> </span>
+                    <span class="pending"> <span style="font-size:15px;">pending</span>
                   <% else %>
                     <%= package.booking.delivery_date %>
                   <% end %>
+                  </span>
                 </p>
                   <p class="card-text">Expiry date:
                        <% if package.booking == nil  %>
-                    <span class="pending"> <h2>Pending</h2> </span>
+                    <span class="pending"> <span>pending</span> </span>
                   <% else %>
                     <%= package.booking.delivery_date + (@user.team.rental_period * 30)  %>
                   <% end %>
@@ -95,7 +106,6 @@
               </div>
         </div>
             <% end %>
-
       </div>
  </div>
 </div>

@@ -10,7 +10,12 @@ Rails.application.routes.draw do
   resources :furnitures, only: [:index, :show]
   resources :bookings
   resources :invoices
-  resources :packages, only: [:index, :create, :destroy, :new]
+  resources :packages, only: [:index, :create, :destroy, :new, :update] do
+    member do
+      patch :item_increase
+      patch :item_decrease
+    end
+  end
   resources :teams do
     collection do
       get "team_packages", to: "teams#packages"
