@@ -5,30 +5,28 @@
   border-top: solid 2px #2B313D;
 }
 
-.footer-list-icon {
-  padding-left: 0;
-  padding-top: 24px;
-
-  i {
-  padding: 16px;
-  border-radius: 50%;
+.social-icon-home {
+  width: 3em;
+  height: 3em;
   border: solid 2px #2B313D;
-  margin-right: 8px;
-  margin-left: 8px;
-  font-size: 32px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 50%;
+  transition: 2s;
+  :hover {
+    font-size: 36px;
   }
 }
-.footer-list-icon i:hover {  
-  background-color: #2B313D;
-  color: white; 
-}
 
-.footer-list-icon li {
-  display: inline-block;
-}
-
-.footer-list {
+.footer-list-icon {
   list-style: none;
-  text-decoration: none;
   padding: 0;
+  li {
+    margin-top: 3%;
+    margin-right: 3%;
+    display: inline-block;
+  }
 }
