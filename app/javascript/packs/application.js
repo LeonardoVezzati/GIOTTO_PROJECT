@@ -28,6 +28,7 @@ import "bootstrap";
 import  {initFlatpicker} from "../plugins/flatpickr"
 import {initAutocomplete} from "../plugins/init_autocomplete"
 
+import { increase } from "../packages/counter"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -36,6 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initFlatpicker()
   initAutocomplete()
+  increase()
 });
 console.log(flatpickr)
 

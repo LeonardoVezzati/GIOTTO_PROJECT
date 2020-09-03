@@ -23,7 +23,7 @@ class PackagesController < ApplicationController
   def index
     @user = User.find(params[:user])
     @booking = @user.bookings.find_by(status: "pending")
-    @packages = @user.packages.where(booking: @booking)
+    @packages = @user.packages.where(booking: @booking).order(:created_at)
 
     @total_items = 0
     @packages.each do |package|
@@ -44,6 +44,27 @@ class PackagesController < ApplicationController
     @package = Package.find(params[:id])
     @package.destroy
     redirect_to packages_path(user: current_user)
+  end
+
+  def update
+    @package = Package.find(params[:id])
+    @package.update(params_package)
+    redirect_to packages_path(user: current_user)
+  end
+
+  def item_increase
+    @pack_numb = Package.find(params[:id])
+    @pack_numb.number += 1
+    @pack_numb.save
+    redirect_to packages_path(user: current_user, anchor: "package-#{@pack_numb.id}")
+
+  end
+
+  def item_decrease
+    @pack_numb = Package.find(params[:id])
+    @pack_numb.number -= 1
+    @pack_numb.save
+    redirect_to packages_path(user: current_user, anchor: "package-#{@pack_numb.id}")
   end
 
   private

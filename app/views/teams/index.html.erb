@@ -78,10 +78,12 @@
 
       <div class="flex-item ">
       <% @team.each do |user| %>
+
         <div class="user-card row align-items-center">
           <% if user[:user].picture.attached? %>
           <div class="button-add-employee">
             <%= cl_image_tag user[:user].picture.key, height: 136, width: 136, crop: :fill, class: "img-avatar"%>
+
           </div>
           <% else %>
           <div class="button-add-employee">

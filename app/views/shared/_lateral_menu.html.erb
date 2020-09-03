@@ -2,8 +2,8 @@
   <div class="d-flex" id="wrapper">
   <div class= "lateral_menu_list">
     <div class="border-right" id="sidebar-wrapper">
-
       <div class="list-group list-group-flush">
+
         <% if current_user.status == "manager" %>
           <%= link_to teams_path, class: 'list-group-item list-group-item-action text-side' do %>
             <i class="fas fa-user-plus lateral-menu-logo"></i> <span class="text-side">Manage your team</span>
@@ -29,7 +29,10 @@
             <% end %>
           <% end %>
         <% end %>
-        <%= link_to edit_user_registration_path, class: 'list-group-item list-group-item-action text-side settings-div' do %>
+      </div>
+
+            <div class="list-group list-group-flush settings-div">
+        <%= link_to edit_user_registration_path, class: 'list-group-item list-group-item-action text-side' do %>
           <i class="fas fa-user-cog lateral-menu-logo"></i> <span class="text-side"> Settings </span>
         <% end %>
       </div>
