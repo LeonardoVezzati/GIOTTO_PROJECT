@@ -57,8 +57,9 @@
                 <div class= "number-of-items">
                    <%= package.number  %>
                 </div>
-                <div class="card-packages-image" id="package-<%= package.id %>">
-                  <%= cl_image_tag package.furniture.photo, width: 266, height: 266, crop: :fit %>
+
+                <div class="card-packages-image">
+                  <%= cl_image_tag package.furniture.photo, width: 266, height: 266, crop: :fit, class="avatar-large avatat-pos" %>
                 </div>
                 <div class="card-body">
 
