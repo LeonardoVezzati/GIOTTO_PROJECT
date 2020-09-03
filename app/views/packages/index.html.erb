@@ -59,17 +59,17 @@
                   <%= package.number %>
                 </div>
                 <div class="card-packages-image">
-                  <%= cl_image_tag package.furniture.photo, width: 266, height: 266, crop: :fit %>
+                  <%= cl_image_tag package.furniture.images.first.key, width: 266, height: 266, crop: :fit %>
                 </div>
 
                 <div class="card-body">
                   <div class="container">
                     <div class="row card-title" style="align-content: center; justify-content: center;">
                       <div class= "add-items-btn" style="margin-right:25px;">
-                      <%= link_to "+", item_increase_package_path(package), method: :patch, remote: true  %>
+                      <%= link_to "-", item_decrease_package_path(package), method: :patch, remote: true  %>
                       </div>
                       <div class= "rmv-items-btn">
-                      <%= link_to "-", item_decrease_package_path(package), method: :patch, remote: true  %>
+                      <%= link_to "+", item_increase_package_path(package), method: :patch, remote: true  %>
                       </div>
                     </div>
                   </div>
