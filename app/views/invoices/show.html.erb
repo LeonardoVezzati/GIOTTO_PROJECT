@@ -3,6 +3,15 @@
     <div class= "index-list">
 
       <div class="container_invoice">
+        <div class="circle-invoice">
+          <span class="btn box box2">
+            <%=link_to invoices_path do %>
+            <svg viewbox="0 0 40 40">
+              <path class="close-x" d="M 10,10 L 30,30 M 30,10 L 10,30" />
+            </svg>
+            <% end %>
+          </span>
+        </div>
         <div class="rectangle-invoice">
         <div class="box-details">
           <div class="flex1">
@@ -34,7 +43,7 @@
               <% total = 0%>
               <% @invoice.team.users.each do |user| %>
                 <% user.packages.each do |package| %>
-                <li class ="item-invoice"><span class="package-name"><%= package.furniture.name %></span> <span><%= package.number %>x</span> <span class="price-invoice"> €<%= package.price %></span></li>
+                <li class ="item-invoice"><span class="package-name"><%= package.furniture.name %></span> <span><%= package.number %>x</span> <span class="price-invoice"><%= package.price %>€</span></li>
                 <% total += package.price %>
                 <% end %>
               <% end %>
