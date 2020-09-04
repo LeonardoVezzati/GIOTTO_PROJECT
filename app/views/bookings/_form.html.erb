@@ -1,11 +1,13 @@
 <div class= "row row-container">
   <%= render 'shared/lateral_menu' %>
   <div class= "index-list ">
-
+    <div style= "margin-top: 40px">
+      <%= link_to "Return to deliveries", bookings_path, class: 'btn btn-delivery'%>
+    </div>
     <div class="container">
-      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-        <h2>Your're only a few steps away from your dream office!</h2>
-        <h2>Rent it now!</h2>
+      <div class="form-wrapper-new-delivery">
+
+        <h2 class= "form-delivery-title">Your're only a few steps away from your dream office!</h2>
 
         <%=simple_form_for [@booking] do |f|%>
           <%= f.input :delivery_date, as: :string, required: false, input_html: {class: "datepicker"} %>
@@ -15,7 +17,7 @@
           <%= f.input :floor %>
           <%= f.input :building_elevator %>
           <%= f.input :external_elevator, label: "External elevator (An additional fee of 75€ incurs)."%>
-          <%=f.submit "Confirm", class: "btn btn-create btn-create:hover" %>
+          <%=f.submit "Confirm", class: "btn btn-create" %>
       <%end %>
       </div>
     </div>
