@@ -163,6 +163,7 @@ position: absolute;
 }
 
 .product-card-packages {
+      padding-bottom: 20px;
   box-shadow: 2px 2px 16px 1px rgba(200, 200, 200, 0.1);
   margin-top: 40px;
   margin-bottom: 40px;
@@ -171,7 +172,7 @@ position: absolute;
   width: calc(100%-1px);
   height: 100%;
   min-height: 560px;
-  max-height: 600px;
+  max-height: 753px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -204,7 +205,7 @@ position: absolute;
   width: calc(100%-1px);
   height: 100%;
   min-height: 560px;
-  max-height: 600px;
+  max-height: 755px;
   word-wrap: break-word;
   background-color: #FFFBF5;
   background-clip: border-box;
