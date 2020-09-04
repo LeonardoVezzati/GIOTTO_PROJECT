@@ -13,6 +13,12 @@ protected
     user_path(resource)
   end
 
+
+  def default_url_options
+  { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
+
    def after_sign_up_path_for(resource)
     packages_path(user: current_user) # Or :prefix_to_your_route
   end
@@ -20,4 +26,5 @@ protected
      def after_sign_in_path_for(resource)
     packages_path(user: current_user) # Or :prefix_to_your_route
   end
+
 end

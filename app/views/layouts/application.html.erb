@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Giotto | Europe's Best Sustainable Home Office Rental Platform</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <meta name="Description" content="No fixed upfront investments. Flexible duration. Free delivery and installation in less than 10 days. Best design and ergonomics. Happy team!">
+    <title><%= meta_title %></title>
+<meta name="description" content="<%= meta_description %>">
+
+<!-- Facebook Open Graph data -->
+<meta property="og:title" content="<%= meta_title %>" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<%= request.original_url %>" />
+<meta property="og:image" content="<%= meta_image %>" />
+<meta property="og:description" content="<%= meta_description %>" />
+<meta property="og:site_name" content="<%= meta_title %>" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+<meta name="twitter:title" content="<%= meta_title %>">
+<meta name="twitter:description" content="<%= meta_description %>">
+<meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+<meta name="twitter:image:src" content="<%= meta_image %>">
+
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag 'Favicon.png' %>
-    <meta property="og:title" content="Giotto - Sustainable Home Office Rental Platform">
-    <meta property="og:image" content="Giotto-Social-1.png">
-    <meta property="og:description" content="Giotto is the smartest way to manage your remote team. Avoid big upfront investments and make your remote team more productive and happier! No hassles, check out our dashboard!">
-    <meta property="og:site_name" content="Giotto"/>
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@Giotto">
-    <meta name="twitter:title" content="Giotto - Sustainable Home Office Rental Platform">
-    <meta name="twitter:description" content="Giotto is the smartest way to manage your remote team. Avoid big upfront investments and make your remote team more productive and happier! No hassles, check out our dashboard!">
-    <meta name="twitter:creator" content="@Giotto">
-    <meta name="twitter:image:src" content="Home-page-1.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
