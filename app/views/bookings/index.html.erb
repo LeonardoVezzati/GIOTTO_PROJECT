@@ -44,7 +44,7 @@
         </div>
 
       </div>
-      
+
       <div class="package_title flex-row d-flex justify-content-between align-items-center">
         <h3>Your deliveries list:</h3>
         <%= link_to "Plan your delivery", new_booking_path, class: 'btn btn-delivery' %>
@@ -52,8 +52,10 @@
 
 
       <% @bookings.each do |booking| %>
+        <% if current_user.id == booking.user_id %>
+
           <div class="user-card row align-items-center" style= "margin-top: 40px">
-            
+
             <div class="button-add-employee">
               <%= link_to new_user_invitation_path(params: { team_id:  current_user.team_id }), class: "team-icon" do %><i class="fas fa-truck"></i><% end %>
             </div>
@@ -94,6 +96,7 @@
             </div>
 
         </div>
+        <% end %>
       <% end %>
 
 
