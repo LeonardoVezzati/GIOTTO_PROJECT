@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
     @team = current_user.team.users.map { |user| { user: user, expenses: user.packages.map{ |pack| pack.price }.sum }}
     @total_members= current_user.team.users.count
     @total_users_budget = current_user.team.users.map { |user| user.budget_per_month }.sum
-
+    @total_users_expenses = @team.map { |user| user[:expenses] }.sum
   end
 
   def packages

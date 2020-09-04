@@ -33,8 +33,7 @@
           <div class="top-box-packages align-items-center">
             <div class="top-box-info-packages">
               <p>N. of team members:</p>
-              <%= @total_members %>
-              <h2><%= @total %></h2>
+              <h2><%= @total_members %></h2>
             </div>
           </div>
         </div>
@@ -43,7 +42,7 @@
           <div class="top-box-packages align-items-center" >
             <div class="top-box-info-packages">
               <p>Tot. expenses/month:</p>
-              <% @total = 0 %>
+              <h2>€<%= @total_users_expenses %></h2>
             </div>
           </div>
         </div>
@@ -51,7 +50,7 @@
         <div class="col-3">
           <div class="top-box-packages align-items-center" >
             <div class="top-box-info-packages">
-              <p>Tot. budget/month:</p>
+              <p>Team Tot. budget/month:</p>
               <h2>€<%= @total_users_budget %></h2>
             </div>
           </div>
