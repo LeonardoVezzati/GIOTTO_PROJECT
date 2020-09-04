@@ -86,7 +86,7 @@
           </div>
           <% else %>
           <div class="button-add-employee">
-            <%= link_to new_user_invitation_path(params: { team_id:  current_user.team_id }), class: "team-icon" do %><i class="far fa-image"></i><% end %>
+            <%= link_to team_packages_teams_path(params: { user_id: user[:user].id }), class: "team-icon" do %><i class="far fa-image"></i><% end %>
           </div>
           <% end %>
           <div class="col-3">
@@ -118,7 +118,7 @@
 
         <div class="col-1">
           <div class="notification-content" style="margin-right:0px; text-align: center;">
-            <a class="profil-btn"> <%= link_to "Profil", team_packages_teams_path(params: { user_id: user[:user].id }) %></a>
+            <a class="profil-btn"> <%= link_to "Profile", team_packages_teams_path(params: { user_id: user[:user].id }) %></a>
           </div>
         </div>
 
