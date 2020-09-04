@@ -29,7 +29,15 @@
                   <h3 class="align-left"><span class ="color-gray"><%= invoice.emission%></span></h3>
                 </div>
                 <div class="box-details">
-                  <h3 class="align-right"><span class ="color-gray"> <%= invoice.price%> € </span></h3>
+                  <h3 class="align-right"><span class ="color-gray">
+                    <% total = 0%>
+              <% invoice.team.users.each do |user| %>
+                <% user.packages.each do |package| %>
+                <% total += package.price %>
+                <% end %>
+              <% end %>
+                  <%=total%> €
+                  </span></h3>
                 </div>
                 <div class="box-details">
 
