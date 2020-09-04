@@ -98,7 +98,7 @@
 
           <div class="col-2">
             <div class="notification-content">
-              <p><small style="color:black;"><%= user[:user].budget_per_month %>$</small></p>
+              <p><small style="color:black;">€<%= user[:user].budget_per_month %></small></p>
               <% unless current_user.team.budget.nil? || current_user.team.budget.zero? %>
               <p><small> <%= ((user[:user].budget_per_month.to_f / current_user.team.budget.to_f) * 100).round %>  % of total expenses </small></p>
               <% end %>
@@ -111,7 +111,7 @@
               <% budget_used = (user[:expenses] / user[:user].budget_per_month.to_f) * 100 %>
               <div class="progress-bar" role="progressbar" style="width: <%= budget_used  %>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
               </div>
-              <p style="position:absolute; padding-left:30%; top:-2px; font-size:15px;"><%= user[:expenses]  %>$/<%= user[:user].budget_per_month  %>$</p>
+              <p style="position:absolute; padding-left:30%; top:-2px; font-size:15px;"><%= user[:expenses]  %>€/<%= user[:user].budget_per_month  %>€</p>
             </div>
           </div>
         </div>
