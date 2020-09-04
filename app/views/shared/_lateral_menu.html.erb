@@ -20,7 +20,7 @@
         <i class="fas fa-truck lateral-menu-logo"></i> <span class="text-side">My deliveries</span>
         <% end %>
         <% if current_user.status == "manager" %>
-          <%= link_to packages_path, class: 'list-group-item list-group-item-action text-side' do %>
+          <%= link_to invoices_path, class: 'list-group-item list-group-item-action text-side' do %>
           <i class="fas fa-wallet lateral-menu-logo"></i> <span class="text-side">My wallet</span>
           <% end %>
           <% if current_user.team.invoices.first %>

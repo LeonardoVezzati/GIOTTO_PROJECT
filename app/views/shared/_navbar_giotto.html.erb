@@ -8,11 +8,11 @@
      <% if current_user == nil %>
      <li class='text-list-dashboard'> <%= link_to 'Login', teams_path %></li>
        <% elsif current_user.status == "manager" %>
-      
+
       <li class='text-list-dashboard'> <%= link_to 'Dashboard', teams_path %></li>
 
         <% else %>
-      <li class='text-list-dashboard'> <%= link_to 'Dashboard', packages_path %></li>
+      <li class='text-list-dashboard'> <%= link_to 'Dashboard', packages_path(user: current_user) %></li>
 
       <% end %>
       <li class='text-list-left'>About us</li>
