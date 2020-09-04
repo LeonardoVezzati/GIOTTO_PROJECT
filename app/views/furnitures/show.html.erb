@@ -36,9 +36,9 @@
         <% @divide = 0.0417 %>
       <% end %>
       <li class="product-show-list-rentalprice">€<%= (@furniture.price_cents * @divide / 100).ceil %>  /month</li>
-      <li class="product-show-list-price">Free delivery and installation</li>
-      <li class="product-show-list-price">Save: (%<%= ((((@furniture.price_cents/ 100).ceil)-(((@furniture.price_cents * @divide / 100).ceil)*current_user.team.rental_period))/((@furniture.price_cents/ 100).ceil)) %>)</li>
-      <li class="product-show-list-price">Total price x period: €<%= ((@furniture.price_cents * @divide / 100).ceil)*current_user.team.rental_period %></li>
+      <li class="product-show-list-price-delivery">Free delivery and installation</li>
+
+      <li class="product-show-list-price-period">Total price x period: €<%= ((@furniture.price_cents * @divide / 100).ceil)*current_user.team.rental_period %></li>
       <li class="product-show-list-price">Original retail price: €<%= (@furniture.price_cents/ 100).ceil %></li>
       <li class="product-show-list-description"><%= @furniture.description %></li>
         <%= simple_form_for @package do |f| %>
