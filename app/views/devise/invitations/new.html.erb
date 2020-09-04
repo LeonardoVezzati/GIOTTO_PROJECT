@@ -1,9 +1,13 @@
 <div class= "row row-container">
   <%= render 'shared/lateral_menu' %>
   <div class= "index-list ">
-    <div class="container" style="padding-top:50px;">
-      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-        <h2>Invite a new user</h2>
+    <div style= "margin-top: 40px">
+      <%= link_to "Return to dashboard", teams_path, class: 'btn btn-delivery'%>
+    </div>
+    <div class="container">
+      <div class="form-wrapper-new-delivery">
+
+        <h2 class= "form-delivery-title">Invite a new user</h2>
         <%= simple_form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }) do |f| %>
           <%= f.error_notification %>
 
@@ -16,7 +20,7 @@
               <%= f.input :team_id, as: :hidden, input_html: {value: params[:team_id]} %>
 
             </div>
-                 <%=f.submit "Send invite", class: "btn btn-primary btn-create" %>
+                 <%=f.submit "Send invite", class: "btn btn-create" %>
 
           <% end %>
         <% end %>
